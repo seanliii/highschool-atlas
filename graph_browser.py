@@ -208,6 +208,8 @@ class Projection:
         self.meta = {}
         self.incoming = defaultdict(list)
         self.outgoing = defaultdict(list)
+        self.originalIncoming = defaultdict(list)
+        self.originalOutgoing = defaultdict(list)
 
     def add(self, value):
         identifier = value['id']
@@ -232,11 +234,16 @@ class Projection:
         self.nodes[identifier] = value
         return value
 
-    def edge(self, source, target, relation, *, label=None, reason='', locator='', status='', boundary='', identifier=None, details=None, source_scope=None):
+    def edge(self, source, target, relation, *, label=None, reason='', locator='', status='', boundary='', identifier=None, details=None, source_scope=None,
+             original_source=None, original_target=None, original_relation=None, original_label=None):
         edge = {'id': identifier or f'{self.id}:e{len(self.edges)}', 'source': str(source), 'target': str(target),
                 'relation': text(relation), 'label': text(label or relation),
                 'fromLabel': self.nodes.get(str(source), {}).get('label', str(source)),
                 'toLabel': self.nodes.get(str(target), {}).get('label', str(target))}
+        edge['originalSource'] = text(source if original_source is None else original_source)
+        edge['originalTarget'] = text(target if original_target is None else original_target)
+        edge['originalRelation'] = text(relation if original_relation is None else original_relation)
+        edge['originalLabel'] = text(label or relation if original_label is None else original_label)
         for key, value in [('reason', reason), ('sourceLocator', locator), ('status', status), ('boundary', boundary)]:
             if value:
                 edge[key] = text(value)
@@ -252,6 +259,8 @@ class Projection:
             edge['toLabel'] = self.nodes.get(edge['target'], {}).get('label', edge['target'])
             self.incoming[edge['target']].append(edge)
             self.outgoing[edge['source']].append(edge)
+            self.originalIncoming[edge.get('originalTarget', edge['target'])].append(edge)
+            self.originalOutgoing[edge.get('originalSource', edge['source'])].append(edge)
         return self
 
     def structure(self, selected):
@@ -407,12 +416,19 @@ class Projection:
         values = list(self.nodes.values())
         filters = {}
         relation_counts = Counter(e['relation'] for e in self.edges)
+        original_relation_counts = Counter(e.get('originalRelation', e['relation']) for e in self.edges)
         filters['relations'] = [{'value': k, 'label': next(e['label'] for e in self.edges if e['relation'] == k), 'count': v} for k, v in sorted(relation_counts.items())]
+        filters['originalRelations'] = [{'value': k, 'label': next(e.get('originalLabel', e['label']) for e in self.edges if e.get('originalRelation', e['relation']) == k), 'count': v}
+                                        for k, v in sorted(original_relation_counts.items())]
         filters['kinds'] = [{'value': k, 'label': KIND_LABELS[k], 'count': v} for k, v in sorted(Counter(n['kind'] for n in values).items())]
         relation = params['relation']
+        raw_relation = relation[4:] if relation.startswith('raw:') else ''
+        use_raw = relation == 'all' or bool(raw_relation)
         # Empty supported prerequisite/related filters remain compatible with schema v1.
-        if relation not in {'all', 'prerequisite', 'related', *relation_counts}:
+        if relation != 'all' and not raw_relation and relation not in {'prerequisite', 'related', *relation_counts}:
             raise AtlasError('无效关系筛选；请使用 filters.relations 返回的类型')
+        if raw_relation and raw_relation not in original_relation_counts:
+            raise AtlasError('无效原始关系筛选；请使用 filters.originalRelations 返回的类型')
         for field, plural in [('subject', 'subjects'), ('stage', 'stages'), ('group', 'groups')]:
             counts = Counter(n[field] for n in values)
             filters[plural] = [{'value': k, 'label': SUBJECT_LABELS.get(k, k) if field == 'subject' else ('未登记' if k == 'unknown' else k), 'count': v}
@@ -435,14 +451,18 @@ class Projection:
         elif page_nodes:
             selected = next((n for n in filtered if page == 1 and not params.get('q') and n['id'] == self.default), page_nodes[0])
         relation = params['relation']
-        accept = lambda e: relation == 'all' or e['relation'] == relation
+        accept = lambda e: relation == 'all' or (e.get('originalRelation', e['relation']) == raw_relation if use_raw else e['relation'] == relation)
+        source_of = lambda e: e.get('originalSource', e['source']) if use_raw else e['source']
+        target_of = lambda e: e.get('originalTarget', e['target']) if use_raw else e['target']
+        incoming = self.originalIncoming if use_raw else self.incoming
+        outgoing = self.originalOutgoing if use_raw else self.outgoing
         distance = {}
         adjacent = []
         if selected:
             start = selected['id']
             distance[start] = 0
             # Independent incoming/outgoing breadth-first traversals; cycles never recurse.
-            for sign, index, endpoint in [(-1, self.incoming, 'source'), (1, self.outgoing, 'target')]:
+            for sign, index, endpoint in [(-1, incoming, 'source'), (1, outgoing, 'target')]:
                 seen = {start}
                 queue = deque([(start, 0)])
                 while queue:
@@ -452,7 +472,7 @@ class Projection:
                     for edge in index.get(current, []):
                         if not accept(edge):
                             continue
-                        other = edge[endpoint]
+                        other = target_of(edge) if endpoint == 'target' else source_of(edge)
                         if other not in self.nodes or other in seen:
                             continue
                         seen.add(other)
@@ -460,9 +480,9 @@ class Projection:
                         if other not in distance or abs(d) < abs(distance[other]):
                             distance[other] = d
                         queue.append((other, depth + 1))
-            adjacent = [e for e in self.edges if accept(e) and (e['source'] == start or e['target'] == start)]
+            adjacent = [e for e in self.edges if accept(e) and (source_of(e) == start or target_of(e) == start)]
         reached = set(distance)
-        neighborhood_edges = [e for e in self.edges if accept(e) and e['source'] in reached and e['target'] in reached]
+        neighborhood_edges = [e for e in self.edges if accept(e) and source_of(e) in reached and target_of(e) in reached]
         order = sorted(distance, key=lambda ident: (abs(distance[ident]), self.nodes[ident]['kind'] == 'page', distance[ident], ident))
         shown = set(order[:NODE_LIMIT])
         shown_edges = [e for e in neighborhood_edges if e['source'] in shown and e['target'] in shown][:EDGE_LIMIT]
@@ -478,6 +498,8 @@ class Projection:
         def summary(value):
             # Only selected contains original long attributes; never mutate cached nodes.
             return {k: v for k, v in value.items() if k not in {'details', 'originalContent', 'readingSupplement', 'structureExplanation'}}
+        if use_raw:
+            notes.append('当前显示原始 rawSource/rawTarget/rawRelation；只有显式选择 prerequisite/related 等导航筛选时才使用归一化索引。')
         if not self.prerequisite_supported:
             notes.append('prerequisite_supported=false；当前读取模式不支持先备关系，不代表没有先备。RDF类型/对齐属性不视为先备。')
         elif relation != 'all' and not any(e['relation'] == relation for e in self.edges):
@@ -1256,10 +1278,12 @@ class GraphBrowser:
                 graph.edge(sid + ':' + edge['source'], sid + ':' + edge['target'], edge['relation'], label=edge.get('label') or edge.get('codedRelation') or edge['relation'],
                            reason=edge.get('reason', ''), locator=edge.get('locator', ''), identifier=edge['id'], status=edge.get('strength', ''),
                            boundary='原生来源关系；不等于当前题目必修路线',
-                           details=property_details({key: edge[key] for key in ('rawRelation', 'codedRelation', 'rawSource', 'rawTarget') if key in edge}))
+                           details=property_details({key: edge[key] for key in ('rawRelation', 'codedRelation', 'rawSource', 'rawTarget') if key in edge}),
+                           original_source=sid + ':' + edge['rawSource'], original_target=sid + ':' + edge['rawTarget'],
+                           original_relation=edge['rawRelation'], original_label=edge.get('codedRelation') or edge['rawRelation'])
             auxiliary = getattr(source, 'details', {}).get('auxiliaryMathLinks', [])
             for index, edge in enumerate(auxiliary):
-                graph.edge(sid + ':' + edge['source'], sid + ':' + edge['target'], 'math_link', label='附加数学联系（非先备）', reason=edge.get('reason', ''), locator=edge.get('locator', ''), identifier=f'{sid}:math_link:{index}', boundary='来源 mathLinks 原方向；单独计数，不并入原生 dependencies')
+                graph.edge(sid + ':' + edge['source'], sid + ':' + edge['target'], 'math_link', label='mathLink', reason=edge.get('reason', ''), locator=edge.get('locator', ''), identifier=f'{sid}:math_link:{index}', boundary='来源 mathLinks 原方向；单独计数，不并入原生 dependencies', original_relation=edge['relation'], original_label='mathLink')
             registered = record['sourceCounts']
             actual = {'nodes': len(source.nodes), 'edges': len(source.edges), 'subjects': dict(Counter(n['subject'] for n in source.nodes))}
             graph.meta = {'sourceCounts': actual, 'originalSourceCounts': registered, 'uniqueNodes': len(entries), 'nativeEdgeCount': len(source.edges), 'auxiliaryEdgeCount': len(auxiliary), 'projectionEdgeCount': len(graph.edges), 'kindCounts': dict(Counter(n['kind'] for n in graph.nodes.values())), 'projectionLoaded': True, 'prerequisite_supported': source.prerequisite_supported}

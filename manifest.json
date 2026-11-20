@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "service": "highschool-atlas",
-  "releaseId": "atlas-20261120-dfbaee56fd1a",
-  "generatedAt": "2026-11-20T04:26:50.098823+00:00",
+  "releaseId": "atlas-20261120-8d09e8ea3113",
+  "generatedAt": "2026-11-20T07:08:49.283590+00:00",
   "origin": "https://play.vortexsean.com",
   "prefix": "/highschool-atlas/",
   "deploy": {
@@ -17,27 +17,27 @@
     "publicRedistributionAllowed": true,
     "gateRequired": false,
     "liveOnly": false,
-    "originalContentOrigin": "仅五份许可明确的外源固定快照；各自原许可证与署名保留，不宣称全部MIT。",
-    "sourceLicensing": "S01/S04 ODbL+CC BY-SA；S02 CC BY-NC-SA；S03 CC BY-NC；S06 PolyForm Noncommercial。",
+    "originalContentOrigin": "本地原创投影及许可明确外源；S05/S07仅以原源直读或原项目链接提供，不重新打包。",
+    "sourceLicensing": "本地MIT；S01/S04 ODbL+CC BY-SA；S02 CC BY-NC-SA；S03 CC BY-NC；S06 PolyForm Noncommercial；S05/S07保留原源边界。",
     "repository": "https://github.com/seanliii/highschool-atlas",
     "roles": {
       "owner": "seanvortex",
       "viewers": "公开匿名只读（非商业条件按各源许可证）",
-      "redistributors": "按各源许可证"
+      "redistributors": "按各源许可证与原源条款"
     }
   },
   "counts": {
-    "graphs": 5,
-    "primaryGraphs": 5,
-    "external": 5,
-    "local": 0,
-    "supplementary": 0
+    "graphs": 14,
+    "primaryGraphs": 12,
+    "external": 7,
+    "local": 5,
+    "supplementary": 2
   },
   "stats": {
-    "nodes": 49899,
-    "edges": 54113,
-    "graphBytes": 16432664,
-    "uncompressedBytes": 389182320,
+    "nodes": 77425,
+    "edges": 81918,
+    "graphBytes": 17933952,
+    "uncompressedBytes": 417143945,
     "compression": "xz lossless, per-graph lazy decompression"
   },
   "files": {
@@ -46,20 +46,20 @@
       "sha256": "c369a4622c1a30bf5e3d20270304978b7b16b1ca37fd02f94abb6d4d37706e62"
     },
     "NOTICE": {
-      "bytes": 1152,
-      "sha256": "c7cf312367f43173461184c7b6086dd68c144fffcd7bd4cc2ba0c5738b892f6b"
+      "bytes": 1450,
+      "sha256": "2f218f652dbdf57f98bab487bbe974d750c8f0595956afe8993d7ba6ee73a69b"
     },
     "atlas_public.py": {
-      "bytes": 23842,
-      "sha256": "d2dccc150c1c4d2f6a5a0ac17c0c55be18327016da7aac052ff815e156b010ac"
+      "bytes": 24742,
+      "sha256": "10d3eedb644aeeb39c007c3333cac5d4400c1b88650bb29c9e57419db916ba07"
     },
     "graph_browser.py": {
-      "bytes": 95033,
-      "sha256": "8c5984a82eeebd98283ba9040d62ed86df80ef95ce5f9cc15194441c75175c04"
+      "bytes": 97471,
+      "sha256": "eb7300141702d0e843f6250f6af9c78ac480f0874af7f897ee6b05c1ec1233ba"
     },
     "graph_manifest.json": {
-      "bytes": 11828,
-      "sha256": "04afbb60d8464cc5e77a2d62809c20340d2be73c1bba9693651863275f616a56"
+      "bytes": 22044,
+      "sha256": "9512542ae099f5748ca9ea3d380c78301ecb2e40a0b6831a2877924d5c310067"
     },
     "licenses/S01-CONTENT-CC-BY-SA.txt": {
       "bytes": 18375,
@@ -90,36 +90,68 @@
       "sha256": "c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5"
     },
     "private/graphs/S01.json.xz": {
-      "bytes": 811956,
-      "sha256": "67f8e7985ab599799a216d7c797bb62f08f1bbf67e05812b4830517970a7dfa9"
+      "bytes": 836416,
+      "sha256": "17f2b11565bf6e4d8b36158c5c1729b43a08bd69d585cbea82cbefbcc469f33f"
     },
     "private/graphs/S02.json.xz": {
-      "bytes": 1797636,
-      "sha256": "1b33d31d3d2e12094b00a861de506da0f851fddd7f66e05c50c55eeb04b1a201"
+      "bytes": 1897332,
+      "sha256": "1695535d4f8a1da8dea33af4f9a2690f1e135212851141036b26b4d33c6e525d"
     },
     "private/graphs/S03.json.xz": {
-      "bytes": 555668,
-      "sha256": "506d0389da584641f5e341b783787834fca18d9b0140195fc816aefcd40c6882"
+      "bytes": 575828,
+      "sha256": "fa98a089ef216d1a0584a00ef604dd1b86fb4b1adabfcc3c5c80ae7c6c5573f2"
     },
     "private/graphs/S04.json.xz": {
-      "bytes": 386872,
-      "sha256": "defad89bcdbbde2191bff33f81629749d713c97289ae970276beaa818e0f925e"
+      "bytes": 399752,
+      "sha256": "e8d924b5656dfb3df027791f582128a34f100612a0c46c7e4ac2a417983f2a73"
     },
     "private/graphs/S06.json.xz": {
-      "bytes": 12880532,
-      "sha256": "35c56ecd61c1114ab1306230fc4b37fe249611dfc213c9d89be51432773b23a8"
+      "bytes": 13009104,
+      "sha256": "4968dd1b18e71b9017e9595f7e1dd7765967afdb46bdb09f8706431750c92c99"
+    },
+    "private/graphs/curriculum.json.xz": {
+      "bytes": 141820,
+      "sha256": "9743f92c0289ea22014608810f77bef8f74abfaa8166cbb40e62393aaf62adbb"
+    },
+    "private/graphs/foundation.json.xz": {
+      "bytes": 30276,
+      "sha256": "640e901b01c529c766ec238e1e06de002acc44e3cd9d18743e1b2f8af1956378"
+    },
+    "private/graphs/ledger.json.xz": {
+      "bytes": 90744,
+      "sha256": "84966c1201b4f57d051e3ca00afcc4285cc9b30a499cf69a90b770dc2a7a8b3a"
+    },
+    "private/graphs/mapping.json.xz": {
+      "bytes": 477672,
+      "sha256": "38bd07c259b823b04868592e5faf643bd50c8939ef1f174d627f0ca323d868d8"
+    },
+    "private/graphs/papers.json.xz": {
+      "bytes": 182164,
+      "sha256": "fa01c9e1e80eb4d5b31190e816e5b3ab38b6a349d77629997ca204eee3b6349b"
+    },
+    "private/graphs/textbooks.json.xz": {
+      "bytes": 79532,
+      "sha256": "af55978de954d60ddf57aa2042d777f3795652921b415a91fc367a14c3a0b32f"
+    },
+    "private/graphs/thinking.json.xz": {
+      "bytes": 213312,
+      "sha256": "cb3eefe8dffe0b4c513b086baeb19044da7397f7f0845d0d0a8909e448794c82"
     },
     "public/graphs.css": {
       "bytes": 27265,
       "sha256": "4da13fdcb65da51acf87f11623bcb5ffaa1e8449a7c1aa116819dfc69a456f43"
     },
     "public/graphs.html": {
-      "bytes": 2113,
-      "sha256": "cfcb6ff27b6816ee6de217fb208d5bde24adad375616a9bc81ebac37d34027ec"
+      "bytes": 2138,
+      "sha256": "d7cf26c9848f445793ade8873662da91246e8292b095ff73269799a788a6e527"
     },
     "public/graphs.js": {
-      "bytes": 66691,
-      "sha256": "3f1052f0b8eccaa3a1e84c7229f4f20cd360e6f6286716a92772191976da88c5"
+      "bytes": 70618,
+      "sha256": "eba83fc19643a142ec423f93e301bd2d3087cea31969a4a7e97c50075349f84e"
+    },
+    "public/upstream_s05.js": {
+      "bytes": 11988,
+      "sha256": "d9aa4b1aa1f5a83e71e83da3fcb3d9247b3de75ea0dc178ca65f6207ac6ff053"
     }
   },
   "frontend": {
@@ -139,8 +171,7 @@
     ]
   },
   "omissions": [
-    "S05与S07：未确认公开再分发授权",
-    "本地题卷、教材/PDF物理页与学习记录",
-    "任何凭据、原始PDF、个人绝对路径或私有课堂数据"
+    "S05与S07原始数据不重新打包；仅原源直读或原项目链接",
+    "任何凭据、原始PDF、个人学习记录或个人绝对路径"
   ]
 }

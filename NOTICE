@@ -1,12 +1,13 @@
 知题 · 公开知识图谱
 https://github.com/seanliii/highschool-atlas
 
-Original project code: MIT. Public noncommercial use only where required by a source license.
-Only S01, S02, S03, S04 and S06 are included. S05, S07, local papers,
-textbook/page projections, personal records, credentials and source PDFs are excluded.
-Changes: normalized graph projections, bounded neighborhood APIs, source-backed
-stage/grade/chapter/section location paths, fullscreen browsing and license notices.
-No endorsement by upstream authors is implied.
+Original project code and local projections: MIT. Third-party sources keep their licenses.
+All 14 entries are visible. S05 is read directly from its pinned upstream file;
+S07 links to the official project and original TTL instead of repackaging it.
+No personal records, credentials or source PDFs are included.
+Original rawSource/rawTarget/rawRelation are preserved. Navigation-normalized
+indices are separate and never presented as original source direction.
+Source-backed stage/grade/chapter/section paths and fullscreen browsing included.
 
 S01: Marble / Generative Spark, Inc.
   Source: https://github.com/withmarbleapp/os-taxonomy
@@ -23,3 +24,7 @@ S04: China Skill Taxonomy Authors
 S06: mmlong818/k12-knowledge-points Authors
   Source: https://github.com/mmlong818/k12-knowledge-points
   License: PolyForm-Noncommercial-1.0.0
+S05: bewho/China-K12-knowledge-taxonomy; pinned upstream direct read
+  https://github.com/bewho/China-K12-knowledge-taxonomy
+S07: THU-KEG/EDUKG; official project and original TTL link
+  https://github.com/THU-KEG/EDUKG

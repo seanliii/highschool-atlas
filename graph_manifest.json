@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
   "service": "highschool-atlas",
-  "generatedAt": "2026-11-20T04:26:50.098823+00:00",
-  "catalogVersion": "open-20261120-1f8dd70c8294",
-  "notice": "公开非商业只读快照。归属结构与先备/相关语义关系分层；五源许可证与署名保留。",
+  "generatedAt": "2026-11-20T07:08:49.283590+00:00",
+  "catalogVersion": "open-full-20261120-09cc1708d0f2",
+  "notice": "完整14个入口。原始边不改为导航边；S05原源直读，S07原项目与TTL下载。",
   "graphs": [
     {
       "id": "S01",
       "file": "private/graphs/S01.json.xz",
-      "sha256": "67f8e7985ab599799a216d7c797bb62f08f1bbf67e05812b4830517970a7dfa9",
-      "bytes": 811956,
+      "sha256": "17f2b11565bf6e4d8b36158c5c1729b43a08bd69d585cbea82cbefbcc469f33f",
+      "bytes": 836416,
       "nodeCount": 1845,
       "edgeCount": 3941,
       "title": "withmarbleapp/os-taxonomy",
       "subtitle": "topics.json + dependencies.json; age ranges are not converted into Chinese grades/stages；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
       "family": "external",
       "boundary": "topics.json + dependencies.json; age ranges are not converted into Chinese grades/stages；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
-      "version": "sha256:fa310b1770b1a4c8268e85e33dab36810850b62bc2fbf4d83e9eb43eb8f76937",
+      "version": "sha256:66ba65f701bc8f300c8fcbe343dfe4a37d8c2765d2e731266a0db96f50d6f24e",
       "meta": {
         "sourceCounts": {
           "nodes": 1845,
@@ -67,20 +67,20 @@
           "attribution": "Marble / Generative Spark, Inc."
         }
       },
-      "uncompressedSha256": "0c3bdecccf2827bf6b7b07f14c2ca8b7b07dae499db72f679ad73d81c9212e5f"
+      "uncompressedSha256": "7e5f8bf29b86b10dc438afd56caf464d2a2b977ca66185373b19a0c11d4637e9"
     },
     {
       "id": "S02",
       "file": "private/graphs/S02.json.xz",
-      "sha256": "1b33d31d3d2e12094b00a861de506da0f851fddd7f66e05c50c55eeb04b1a201",
-      "bytes": 1797636,
+      "sha256": "1695535d4f8a1da8dea33af4f9a2690f1e135212851141036b26b4d33c6e525d",
+      "bytes": 1897332,
       "nodeCount": 10685,
       "edgeCount": 23278,
       "title": "haolpku/K12-KGraph + lhpku20010120/K12-KGraph",
       "subtitle": "global_KG text projection; math subject projection inspected separately, never added to global counts；来源授权与学段原值保留；不是全库覆盖",
       "family": "external",
       "boundary": "global_KG text projection; math subject projection inspected separately, never added to global counts；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
-      "version": "sha256:42eeef357a82c15341229997ac770a64fb111dfebbdfac395e603f815d28845d",
+      "version": "sha256:16ea3f8ae4ecd2dccc38bc2c84dbd6415c571c8063d5edd9adaaf8ebad941e40",
       "meta": {
         "sourceCounts": {
           "nodes": 10685,
@@ -124,20 +124,20 @@
           "attribution": "K12-KGraph Authors"
         }
       },
-      "uncompressedSha256": "39bf10bac069adecde12ff531cce3f743915b2e20691fcc3d20c8c575a19f07b"
+      "uncompressedSha256": "8d0b47db410b6d6996776b0b0d4a8014c1fd5f7eb0f54bac77d4e9feedca505a"
     },
     {
       "id": "S03",
       "file": "private/graphs/S03.json.xz",
-      "sha256": "506d0389da584641f5e341b783787834fca18d9b0140195fc816aefcd40c6882",
-      "bytes": 555668,
+      "sha256": "fa98a089ef216d1a0584a00ef604dd1b86fb4b1adabfcc3c5c80ae7c6c5573f2",
+      "bytes": 575828,
       "nodeCount": 2331,
       "edgeCount": 3711,
       "title": "xiaoyang111222/cn-math-taxonomy",
       "subtitle": "fixed requested revision; math/Chinese/English/physics; mathLinks counted separately；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
       "family": "external",
       "boundary": "fixed requested revision; math/Chinese/English/physics; mathLinks counted separately；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
-      "version": "sha256:bba71da031958e3994a83adbc1d5ed2b9f50b7019cdd8d33dba5eefd24489fef",
+      "version": "sha256:7f541405b587eefc9675097e6463754ab594e0d774e6d00a3f98f0466cd977be",
       "meta": {
         "sourceCounts": {
           "nodes": 2331,
@@ -177,20 +177,20 @@
           "attribution": "cn-math-taxonomy Authors"
         }
       },
-      "uncompressedSha256": "f4037e177115ec36d54d6d313100d1f8758d8606fb1a2c089889b637aa021e5d"
+      "uncompressedSha256": "70eb186599513071de6795c01c8ae004de128245e927976f809a8dcda966ab15"
     },
     {
       "id": "S04",
       "file": "private/graphs/S04.json.xz",
-      "sha256": "defad89bcdbbde2191bff33f81629749d713c97289ae970276beaa818e0f925e",
-      "bytes": 386872,
+      "sha256": "e8d924b5656dfb3df027791f582128a34f100612a0c46c7e4ac2a417983f2a73",
+      "bytes": 399752,
       "nodeCount": 1273,
       "edgeCount": 1647,
       "title": "goralcao/china-skill-taxonomy",
       "subtitle": "topics.json + dependencies.json; original stage strings and grade ranges retained；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
       "family": "external",
       "boundary": "topics.json + dependencies.json; original stage strings and grade ranges retained；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
-      "version": "sha256:63dfbd68783edf8a2ccb2bb8a89116271afdbc99e6ccd0d07fd0e0864893fa06",
+      "version": "sha256:fe35e70202d867cc7ea1c1e6ba8c428fda3f486a9bccb7e7c24b9f2cd57469b0",
       "meta": {
         "sourceCounts": {
           "nodes": 1273,
@@ -247,20 +247,84 @@
           "attribution": "China Skill Taxonomy Authors"
         }
       },
-      "uncompressedSha256": "ed8617b77790622443356fa117e670e18aa151e94eddfa57748387834b45259f"
+      "uncompressedSha256": "e4049adf5ed588aa3a8038b942c0a0a995c82fd93bf592175c2a92e1a6334874"
+    },
+    {
+      "id": "S05",
+      "file": "",
+      "sha256": "",
+      "bytes": 0,
+      "nodeCount": 6657,
+      "edgeCount": 9297,
+      "title": "bewho/China-K12-knowledge-taxonomy",
+      "subtitle": "_raw/tokenmap-data.json only; no textbook body or heuristic textbook joins；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "family": "external",
+      "boundary": "_raw/tokenmap-data.json only; no textbook body or heuristic textbook joins；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:46eca1a2dfa12d9cef712f7e9c762311351a6e2a5ed43669feab133c4e34d5ab",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 6657,
+          "edges": 9297,
+          "subjects": {
+            "语文": 1299,
+            "数学": 915,
+            "英语": 853,
+            "科学": 408,
+            "物理": 379,
+            "化学": 285,
+            "生物": 413,
+            "政治": 1082,
+            "历史": 661,
+            "地理": 362
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 6657,
+          "edges": 9297,
+          "subjects": {
+            "语文": 1299,
+            "数学": 915,
+            "英语": 853,
+            "科学": 408,
+            "物理": 379,
+            "化学": 285,
+            "生物": 413,
+            "政治": 1082,
+            "历史": 661,
+            "地理": 362
+          }
+        },
+        "uniqueNodes": 6657,
+        "nativeEdgeCount": 9297,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 9297,
+        "kindCounts": {
+          "knowledge": 6657
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 6657,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 0,
+        "upstream": {
+          "mode": "direct",
+          "url": "https://raw.githubusercontent.com/bewho/China-K12-knowledge-taxonomy/135386badef498d6c3a0c73627580250883793ae/_raw/tokenmap-data.json",
+          "repository": "https://github.com/bewho/China-K12-knowledge-taxonomy"
+        }
+      }
     },
     {
       "id": "S06",
       "file": "private/graphs/S06.json.xz",
-      "sha256": "35c56ecd61c1114ab1306230fc4b37fe249611dfc213c9d89be51432773b23a8",
-      "bytes": 12880532,
+      "sha256": "4968dd1b18e71b9017e9595f7e1dd7765967afdb46bdb09f8706431750c92c99",
+      "bytes": 13009104,
       "nodeCount": 33765,
       "edgeCount": 21536,
       "title": "mmlong818/k12-knowledge-points",
       "subtitle": "all 39 split group JSON files; not the duplicate all-in-one export or textbook PDFs；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
       "family": "external",
       "boundary": "all 39 split group JSON files; not the duplicate all-in-one export or textbook PDFs；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
-      "version": "sha256:e77f5feb26c6bb11a6ba96c1f7f68cd61fdcc7e78bf0ae7f7f0e8eccecc8c9b2",
+      "version": "sha256:28375f9ca7385c7663b983abf11c02a722d084b1b8c0160876afb31d29fd49ac",
       "meta": {
         "sourceCounts": {
           "nodes": 33765,
@@ -326,13 +390,223 @@
           "attribution": "mmlong818/k12-knowledge-points Authors"
         }
       },
-      "uncompressedSha256": "ebf7a18413eb539408e28e1e3832e06b937b73aec921c34783b0df49fb0a79c3"
+      "uncompressedSha256": "1d176b2e23a7875d8953ed70e0bd29a2d24f04cef096cb69d50a6e93203c52c3"
+    },
+    {
+      "id": "S07",
+      "file": "",
+      "sha256": "",
+      "bytes": 0,
+      "nodeCount": 8001,
+      "edgeCount": 0,
+      "title": "THU-KEG/EDUKG",
+      "subtitle": "complete 16,086,599-byte main concept TTL only; no encyclopedia/protein/geonames/material/exercise packages；来源授权与学段原值保留；",
+      "family": "external",
+      "boundary": "complete 16,086,599-byte main concept TTL only; no encyclopedia/protein/geonames/material/exercise packages；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:d4d55aa617e9830bf8f746e09e7e8acd6a6f000b9ba2371ed8c3eadabb3ab6c9",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 8001,
+          "edges": 0,
+          "subjects": {
+            "biology": 1367,
+            "chemistry": 1138,
+            "chinese": 677,
+            "geo": 1243,
+            "history": 1035,
+            "math": 784,
+            "physics": 1029,
+            "politics": 702,
+            "unknown": 26
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 8001,
+          "edges": 0,
+          "subjects": {
+            "biology": 1367,
+            "chemistry": 1138,
+            "chinese": 677,
+            "geo": 1243,
+            "history": 1035,
+            "math": 784,
+            "physics": 1029,
+            "politics": 702,
+            "unknown": 26
+          }
+        },
+        "uniqueNodes": 8001,
+        "nativeEdgeCount": 0,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 0,
+        "kindCounts": {
+          "source": 8001
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": false,
+        "originalContentCount": 0,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 8001,
+        "upstream": {
+          "mode": "external",
+          "url": "https://edukg.org/",
+          "repository": "https://github.com/THU-KEG/EDUKG",
+          "download": "https://drive.google.com/file/d/1YoPITzjk2oKoX0k_XbLplu8IUn16bg4-/view?usp=sharing"
+        }
+      }
+    },
+    {
+      "id": "curriculum",
+      "file": "private/graphs/curriculum.json.xz",
+      "sha256": "9743f92c0289ea22014608810f77bef8f74abfaa8166cbb40e62393aaf62adbb",
+      "bytes": 141820,
+      "nodeCount": 511,
+      "edgeCount": 976,
+      "title": "高中三科课程",
+      "subtitle": "课程表现目标与研究扩展分列",
+      "family": "local",
+      "boundary": "课程表现目标与研究扩展分列",
+      "version": "sha256:7edaea2d14070d5c9f0549fa3a06b1f4b45c73019d18a62132d050e17a160be2",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "7c737303bc37f2780e1e7b0af62120863bbe8618834cdb03386a3ea334c5ad60"
+    },
+    {
+      "id": "foundation",
+      "file": "private/graphs/foundation.json.xz",
+      "sha256": "640e901b01c529c766ec238e1e06de002acc44e3cd9d18743e1b2f8af1956378",
+      "bytes": 30276,
+      "nodeCount": 189,
+      "edgeCount": 361,
+      "title": "初小基础课程",
+      "subtitle": "本地课程设计，不是教材逐字内容",
+      "family": "local",
+      "boundary": "本地课程设计，不是教材逐字内容",
+      "version": "sha256:e585dbd3e502c00fe6299eb9f2dd30d28d33d025bdee2ee78deba3f26abd27a5",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "c2f8109ffc68ceac503e4c464c6dd1618de3380cdc9ac94f255801da84ba9c0d"
+    },
+    {
+      "id": "papers",
+      "file": "private/graphs/papers.json.xz",
+      "sha256": "fa01c9e1e80eb4d5b31190e816e5b3ab38b6a349d77629997ca204eee3b6349b",
+      "bytes": 182164,
+      "nodeCount": 557,
+      "edgeCount": 2088,
+      "title": "题卷知识关系",
+      "subtitle": "实际题级调用、经验桥与跨题跨卷联系",
+      "family": "local",
+      "boundary": "实际题级调用、经验桥与跨题跨卷联系",
+      "version": "sha256:8160e785c0706f04d09ae5ae9de30b44ccf5e269d513dcb03624b7eb435466e0",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "14a617630d1c474c0545eec364b96c616e6442a926f7aee681f719f0cc3b4552"
+    },
+    {
+      "id": "thinking",
+      "file": "private/graphs/thinking.json.xz",
+      "sha256": "cb3eefe8dffe0b4c513b086baeb19044da7397f7f0845d0d0a8909e448794c82",
+      "bytes": 213312,
+      "nodeCount": 1112,
+      "edgeCount": 1686,
+      "title": "思考步骤与机制",
+      "subtitle": "助手研究路径，不是能力测量或学习掌握",
+      "family": "local",
+      "boundary": "助手研究路径，不是能力测量或学习掌握",
+      "version": "sha256:1c32ce2028e16a6d8d078db32f8a9dce72d5e8004ecdb873028bb02cd1dc5a59",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "cd37d19507a71d21b03661baaf068de579b30528210be1319fa482935723b0de"
+    },
+    {
+      "id": "textbooks",
+      "file": "private/graphs/textbooks.json.xz",
+      "sha256": "af55978de954d60ddf57aa2042d777f3795652921b415a91fc367a14c3a0b32f",
+      "bytes": 79532,
+      "nodeCount": 5942,
+      "edgeCount": 5927,
+      "title": "教材与教辅",
+      "subtitle": "书、已登记章与PDF物理页；不是全书章节审读",
+      "family": "local",
+      "boundary": "书、已登记章与PDF物理页；不是全书章节审读",
+      "version": "sha256:1803981b10e29890a8837be81d8df7e79eabf335f04ade602d2cf26751c91b08",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "54d157821f7e82fd47651e93a3fb7a02e4ccfa0439778cf0cf76602033033d5b"
+    },
+    {
+      "id": "mapping",
+      "file": "private/graphs/mapping.json.xz",
+      "sha256": "38bd07c259b823b04868592e5faf643bd50c8939ef1f174d627f0ca323d868d8",
+      "bytes": 477672,
+      "nodeCount": 4167,
+      "edgeCount": 6907,
+      "title": "图谱关联映射层",
+      "subtitle": "保留候选、语义判断与缺口；不是独立图谱种类",
+      "family": "supplementary",
+      "boundary": "保留候选、语义判断与缺口；不是独立图谱种类",
+      "version": "sha256:2e510c3a61bc302e47411937458a476c2d7243183993d9099e8e704a60684f56",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "233eceeda85da67543f9bbfc87297aff3616309583997d58f30620bf5edbd298"
+    },
+    {
+      "id": "ledger",
+      "file": "private/graphs/ledger.json.xz",
+      "sha256": "84966c1201b4f57d051e3ca00afcc4285cc9b30a499cf69a90b770dc2a7a8b3a",
+      "bytes": 90744,
+      "nodeCount": 390,
+      "edgeCount": 563,
+      "title": "知识聚合台账",
+      "subtitle": "已有台账的绑定与状态；不是独立图谱或私有学习记录",
+      "family": "supplementary",
+      "boundary": "已有台账的绑定与状态；不是独立图谱或私有学习记录",
+      "version": "sha256:ea93785c1efcb9f0234c86789b686341eedf36f42e0b5934cf2ea3114e4fafba",
+      "meta": {
+        "license": {
+          "spdx": "MIT",
+          "url": "https://github.com/seanliii/highschool-atlas",
+          "attribution": "seanvortex original local projection"
+        }
+      },
+      "uncompressedSha256": "d1adfeb79d99935acd54a8d35d22baa520b284d3fe78a4880b4972000125a18d"
     }
   ],
   "counts": {
-    "external": 5,
-    "local": 0,
-    "supplementary": 0,
-    "browsable": 5
+    "external": 7,
+    "local": 5,
+    "supplementary": 2,
+    "browsable": 12
   }
 }

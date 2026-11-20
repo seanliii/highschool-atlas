@@ -41,13 +41,14 @@ PRIVATE_COUNTS = {'graphs': 14, 'primaryGraphs': 12, 'external': 7, 'local': 5, 
 MAX_WORKER_SEMAPHORE = 8
 ASSET_FILES = {'graphs.html': 'text/html; charset=utf-8',
                'graphs.js': 'text/javascript; charset=utf-8',
-               'graphs.css': 'text/css; charset=utf-8'}
+               'graphs.css': 'text/css; charset=utf-8',
+               'upstream_s05.js': 'text/javascript; charset=utf-8'}
 GRAPH_FILE_RE = re.compile(r'^private/graphs/(S0[1-7]|[a-z]+)\.json(?:\.xz)?$')
 SHA_RE = re.compile(r'^[a-f0-9]{64}$')
 CREDENTIAL_KEY_RE = re.compile(r'password|secret|api[_-]?key|access[_-]?token|authorization|cookie|credential', re.I)
 SECURITY_HEADERS = (
     ('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; "
-                                 "img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; "
+                                 "img-src 'self' data:; font-src 'self'; connect-src 'self' https://raw.githubusercontent.com; object-src 'none'; "
                                  "base-uri 'none'; form-action 'self'; frame-ancestors 'self'"),
     ('Permissions-Policy', 'fullscreen=(self), camera=(), microphone=(), geolocation=(), payment=()'),
     ('X-Content-Type-Options', 'nosniff'),
@@ -125,10 +126,10 @@ class FrozenGraphs:
         if urlsplit(manifest['origin']).hostname not in {'play.vortexsean.com', '127.0.0.1', 'localhost'}:
             raise AtlasStartupError('发行origin未登记')
         counts = manifest['counts']
-        self.public_mode = counts == PUBLIC_COUNTS
+        scope = manifest['scope']
+        self.public_mode = scope.get('anonymousAccess') is True
         if counts not in (PRIVATE_COUNTS, PUBLIC_COUNTS):
             raise AtlasStartupError('发行图数与私人14图或公开5图约定不符')
-        scope = manifest['scope']
         if self.public_mode:
             if scope.get('anonymousAccess') is not True or scope.get('publicRedistributionAllowed') is not True \
                     or scope.get('gateRequired') or scope.get('privateGrant') or scope.get('liveOnly'):
@@ -140,7 +141,7 @@ class FrozenGraphs:
         self.release_id = manifest['releaseId']
         self.graph_count = counts['graphs']
         self.primary_graphs = counts['primaryGraphs']
-        self.graph_ids = PUBLIC_GRAPH_IDS if self.public_mode else GRAPH_IDS
+        self.graph_ids = GRAPH_IDS if counts == PRIVATE_COUNTS else PUBLIC_GRAPH_IDS
 
         graph_manifest = self._read_json('graph_manifest.json')
         graph_required = {'schemaVersion', 'service', 'generatedAt', 'catalogVersion', 'notice', 'graphs', 'counts'}
@@ -160,6 +161,14 @@ class FrozenGraphs:
                 raise AtlasStartupError('图谱登记缺少必需字段: ' + str(entry.get('id')))
             if not isinstance(entry, dict) or set(entry) - {'uncompressedSha256', 'uncompressed_sha256'} != fields or entry['family'] not in families:
                 raise AtlasStartupError('图谱登记字段无效: ' + str(entry.get('id')))
+            upstream = entry['meta'].get('upstream') if isinstance(entry['meta'], dict) else None
+            if upstream:
+                if entry['id'] not in {'S05', 'S07'} or entry['file'] or entry['sha256'] or entry['bytes'] != 0 \
+                        or upstream.get('mode') not in {'direct', 'external'}:
+                    raise AtlasStartupError('原源直读登记无效: ' + entry['id'])
+                families[entry['family']] += 1
+                self._entries[entry['id']] = entry
+                continue
             if entry['file'] != 'private/graphs/' + entry['id'] + ('.json.xz' if entry['file'].endswith('.xz') else '.json') or not GRAPH_FILE_RE.match(entry['file']):
                 raise AtlasStartupError('图谱文件名不在白名单: ' + entry['file'])
             if not SHA_RE.match(entry['sha256']) or type(entry['bytes']) is not int or entry['bytes'] <= 0:
@@ -180,7 +189,7 @@ class FrozenGraphs:
         self.compressed = any(entry['file'].endswith('.xz') for entry in graphs)
         actual = {p.name for p in private.iterdir() if p.is_file() or p.is_symlink()}
         suffix = '.xz' if self.compressed else ''
-        expected = {entry['id'] + '.json' + suffix for entry in graphs}
+        expected = {entry['id'] + '.json' + suffix for entry in graphs if entry['file']}
         if actual != expected:
             raise AtlasStartupError('private/graphs 存在未登记或多余文件: ' + ','.join(sorted(actual ^ expected)))
         public = self.root / 'public'
@@ -190,15 +199,17 @@ class FrozenGraphs:
             if not (public / name).is_file() or (public / name).is_symlink():
                 raise AtlasStartupError('public 资产缺失: ' + name)
         if {p.name for p in public.iterdir()} != set(ASSET_FILES):
-            raise AtlasStartupError('public 目录只能包含映射的三个静态资产')
+            raise AtlasStartupError('public 目录只能包含映射的静态资产')
 
         files = manifest['files']
-        for name in [*ASSET_FILES, *(e['file'] for e in graphs)]:
+        for name in [*ASSET_FILES, *(e['file'] for e in graphs if e['file'])]:
             if 'public/' + name not in files and name not in files:
                 raise AtlasStartupError('manifest缺少文件登记: ' + name)
 
         # Startup integrity pass: hash every pinned graph file before serving anything.
         for entry in graphs:
+            if not entry['file']:
+                continue
             path = self.root / entry['file']
             if path.is_symlink() or not path.is_file():
                 raise AtlasStartupError('图谱文件缺失或为符号链接: ' + entry['file'])
@@ -260,6 +271,8 @@ class FrozenGraphs:
         if graph_id not in self._entries:
             raise AtlasError('当前发行模式未登记该图谱', 404)
         entry = self._entries[graph_id]
+        if entry['meta'].get('upstream'):
+            raise AtlasError('该图由浏览器从原源直读或打开原项目，服务端不重新分发原数据', 409)
         path = self.root / entry['file']
         if path.is_symlink() or not path.is_file():
             raise AtlasError('冻结图谱文件不可用', 503)

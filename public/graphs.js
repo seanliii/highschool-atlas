@@ -14,7 +14,7 @@
     S06: { label: '学段学科 → 年级/模块 → chapter_path → 知识点', url: 'https://github.com/mmlong818/k12-knowledge-points' },
     S07: { label: '概念实体 → 教材、章、节定位属性', url: 'https://github.com/THU-KEG/EDUKG' }
   };
-  const RELATION_LABELS = { appears_in: '归属 / 出现位置', is_part_of: '组成 / 属于', prerequisite: '来源登记先备', related: '原生相关', mapping: '本题知识用途', bridge: '基础经验联系', bridge_anchor: '经验桥锚点', external_bridge: '外源学段联系', question_prerequisite: '本题先备建议', cross_question: '卷内题目联系', cross_paper: '跨卷题目联系', has_step: '题目中的步骤', sequence: '展示顺序', mechanism: '题面机制', classification: '机制归类', physical_page: '书中物理页', registered_chapter: '已登记章节', chapter_page: '章节定位页', candidate: '名称候选 · 未确认等价', source_review: '来源支持判断', demand_mapping: '本题具体要求', binding: '真实卷题绑定', classroom_registration: '已登记课堂', designed_route: '迁移路线设计', aligned: '语义对应', transfer: '方法迁移', broader: '来源范围更宽', locator: '只提供定位', direct: '本题操作支持', partial: '部分支持', none: '未找到支持', out_of_scope: '范围外', historical_mapping: '独立版本映射', registered_mapping: '已有映射登记', prerequisite_probe: '题级先备探查', math_link: '附加数学联系 · 非先备', semantic_scope: '题级语义切片', semantic_question: '适用题目', textbook_evidence: '已登记教材依据', registered_question: '已有题目登记', registered_bridge_candidate: '材料候选桥', registered_slice: '独立版本题级切片', registered_dataset_candidate: '数据集候选联系' };
+  const RELATION_LABELS = { appears_in: '归属 / 出现位置', is_part_of: '组成 / 属于', prerequisite: 'prerequisite（导航归一）', related: 'related（导航归一）', mapping: '本题知识用途', bridge: '基础经验联系', bridge_anchor: '经验桥锚点', external_bridge: '外源学段联系', question_prerequisite: '本题先备建议', cross_question: '卷内题目联系', cross_paper: '跨卷题目联系', has_step: '题目中的步骤', sequence: '展示顺序', mechanism: '题面机制', classification: '机制归类', physical_page: '书中物理页', registered_chapter: '已登记章节', chapter_page: '章节定位页', candidate: '名称候选 · 未确认等价', source_review: '来源支持判断', demand_mapping: '本题具体要求', binding: '真实卷题绑定', classroom_registration: '已登记课堂', designed_route: '迁移路线设计', aligned: '语义对应', transfer: '方法迁移', broader: '来源范围更宽', locator: '只提供定位', direct: '本题操作支持', partial: '部分支持', none: '未找到支持', out_of_scope: '范围外', historical_mapping: '独立版本映射', registered_mapping: '已有映射登记', prerequisite_probe: '题级先备探查', math_link: '附加数学联系 · 非先备', semantic_scope: '题级语义切片', semantic_question: '适用题目', textbook_evidence: '已登记教材依据', registered_question: '已有题目登记', registered_bridge_candidate: '材料候选桥', registered_slice: '独立版本题级切片', registered_dataset_candidate: '数据集候选联系' };
   const FIELD_LABELS = { evidence: '原来源的表现与例证', assessmentPrompt: '原来源的检查问题', definition: '原来源定义', description: '原来源说明', isbn: 'ISBN', book: '书籍定位', chapter: '章节定位', section: '小节定位', mark: '标记', textbook: '教材定位', performance: '表现目标', readingNotes: '已核读内容', pages: '物理页', page: '物理页', evidenceKind: '依据类型', limitation: '支持范围', paragraph: '原段落', mastery_criteria: '来源要求的表现', diagnostic_question: '原来源的检查例子', question: '问题', answer: '原来源答案', learningObjectives: '来源抽取的学习目标', source_evidence: '原来源的内容依据', annotations: '来源注释', domain: '知识领域', semester: '学期', standards: '来源自行关联的标准', note: '来源说明', confidence: '依据状态', definitionZh: '中文定义' };
   const TECHNICAL_FIELDS = new Set(['原ID', '原类型', '原条目数', '全部定位', 'provenance', 'rawId', 'sourceLocator', '原缺口值', '缺口原登记', '原PDF SHA-256', '原定位', '原名称', '原学科', '原学段', '原学段组', '原标签/类型', '教材定位原JSON', 'RDF原标签', 'RDF原类型IRI（非先备）', '原十列记录', 'record_id', '原属性 · id']);
   const isTechnicalField = detail => TECHNICAL_FIELDS.has(detail.label) || detail.label.startsWith('RDF原属性 · ') || /SHA-256|原属性 · (schema|crossSource|public|localResearch|scopeType|canonical|sourceRefs|sourceVersion|origin|locator|rawSource|rawTarget|external|standards)|原条目\d/.test(detail.label);
@@ -34,8 +34,9 @@
   const titleFor = graph => SOURCE_NAMES[graph?.id] || graph?.title || '图谱';
   const kindFor = node => KIND_LABELS[node?.kind] || '节点';
   const subjectFor = value => SUBJECTS[value] || value || '未标注';
-  const relationFor = edge => edge?.label && edge.label !== edge.relation ? edge.label : RELATION_LABELS[edge?.relation] || edge?.label || edge?.relation || '已登记关系';
-  const relationTypeFor = edge => RELATION_LABELS[edge?.relation] || edge?.relation || '已登记关系';
+  const rawRelationMode = () => typeof state === 'undefined' || !state.relation || state.relation === 'all' || state.relation.startsWith('raw:');
+  const relationFor = edge => rawRelationMode() ? edge?.originalLabel || edge?.originalRelation || edge?.label || edge?.relation : edge?.label && edge.label !== edge.relation ? edge.label : RELATION_LABELS[edge?.relation] || edge?.label || edge?.relation || '已登记关系';
+  const relationTypeFor = edge => rawRelationMode() ? edge?.originalRelation || edge?.relation : RELATION_LABELS[edge?.relation] || edge?.relation || '已登记关系';
   const cleanLocator = value => String(value || '').replace(/\/Users\/[^/]+\/Desktop\/cursor\//g, '').replace(/\/Users\/[^/]+\//g, '本机/');
   const safeHref = value => {
     if (typeof value !== 'string' || !value || /[\u0000-\u001f\u007f]/.test(value)) return null;
@@ -165,9 +166,9 @@
     };
     const localSection = local.length ? `<section class="directory-section"><div class="section-heading"><h2>本地已经建立的关系</h2><span>${local.length} 类</span></div><div class="directory-list">${local.map(g => `<a class="directory-row" data-graph-route="${esc(g.id)}" href="${esc(graphHref(g.id, g.id === 'textbooks' ? { node: 'ct-senior1:c1' } : {}))}">${miniGraph(g.id)}<div><h3>${esc(titleFor(g))}</h3><p>${esc(localDescriptions[g.id] || g.subtitle)}</p><div class="row-meta">${number(g.nodeCount)} 个图节点 · ${number(g.edgeCount)} 条关系</div></div><span class="row-arrow" aria-hidden="true">↗</span></a>`).join('')}</div><p class="directory-note">这里的图节点包含知识、题目、步骤或书页，不能相加当作“知识总数”。题级关系仍是研究判断，不代表学生已经掌握。</p></section>` : '';
     const extraSection = extra.length ? `<section class="supplementary-section"><div class="section-heading"><h2>关联与覆盖，也可以查</h2><span>辅助视图 · 不重复计入 ${number(catalog.counts.browsable)} 个入口</span></div><div class="supplementary-links">${extra.map(g => `<a data-graph-route="${esc(g.id)}" href="${esc(graphHref(g.id))}">${esc(titleFor(g))} ↗<small>${g.id === 'mapping' ? '候选、逐源支持与旧卷映射' : '真实卷题绑定、课堂与练习缺口'}</small></a>`).join('')}</div></section>` : '';
-    const scopeText = publicMode ? '免密码公开的非商业图谱；仅包含许可明确的五份来源，各源许可证与署名保留。' : deployed ? '口令保护的私人非商业图谱；受限来源不对匿名访客开放，未获公开再分发授权。' : '本机只读，不上传材料。';
-    const licenseNote = publicMode ? `<div class="scope-note"><span>许可与源码</span><p>S01 ODbL/CC BY-SA · S02 CC BY-NC-SA · S03 CC BY-NC · S04 ODbL/CC BY-SA · S06 PolyForm Noncommercial。<a href="${esc(catalog.scope.repository)}" rel="noopener noreferrer">GitHub 源码、完整许可证与署名 ↗</a></p></div>` : '';
-    main.innerHTML = `<section id="atlas-overview"><div class="overview-heading"><div><div class="eyebrow">已有材料，放在同一处看清楚</div><h1>图谱，都在这里</h1><p>选一张图，搜索知识或题目。关系、解释和依据在同一页，沿着节点继续看。</p></div><div class="inventory-total"><strong>${number(catalog.counts.browsable)}</strong><small>个主浏览入口</small></div></div><div class="overview-grid">${localSection}<section class="directory-section"><div class="section-heading"><h2>外部知识图谱</h2><span>${external.length} 份独立来源</span></div><div class="directory-list">${external.map(g => `<a class="directory-row source-row" data-graph-route="${esc(g.id)}" href="${esc(graphHref(g.id))}"><span class="source-id">${esc(g.id)}</span><div><h3>${esc(titleFor(g))}</h3><p>${esc(SOURCE_DESCRIPTIONS[g.id])}</p></div><span class="source-stat">${number(g.nodeCount)}<small>来源实体</small></span><span class="row-arrow" aria-hidden="true">↗</span></a>`).join('')}</div><p class="directory-note">${publicMode ? '五源' : '七源'}保持原来的身份与关系，不按同名合并。目录计数来自当前本地登记，进入后核对实际加载；原语言和支持缺口保留。</p></section></div>${extraSection}<div class="scope-note"><span>使用范围</span><p>${scopeText} 能力测量、错误诊断和跨学科完整图谱尚未建成，不拿现有研究关系冒充。</p></div>${licenseNote}</section>`;
+    const scopeText = publicMode ? '公开只读图谱；完整14个入口，原始关系、导航归一与原源边界分别保留。' : deployed ? '口令保护的私人非商业图谱；受限来源不对匿名访客开放，未获公开再分发授权。' : '本机只读，不上传材料。';
+    const licenseNote = publicMode ? `<div class="scope-note"><span>许可与源码</span><p>本地投影 MIT；外源许可证分别保留。S05 固定原源直读，S07 官方项目与原始 TTL 下载。<a href="${esc(catalog.scope.repository)}" rel="noopener noreferrer">GitHub 源码、许可证、署名与逐边核验 ↗</a></p></div>` : '';
+    main.innerHTML = `<section id="atlas-overview"><div class="overview-heading"><div><div class="eyebrow">已有材料，放在同一处看清楚</div><h1>图谱，都在这里</h1><p>选一张图，搜索知识或题目。关系、解释和依据在同一页，沿着节点继续看。</p></div><div class="inventory-total"><strong>${number(catalog.counts.browsable)}</strong><small>个主浏览入口</small></div></div><div class="overview-grid">${localSection}<section class="directory-section"><div class="section-heading"><h2>外部知识图谱</h2><span>${external.length} 份独立来源</span></div><div class="directory-list">${external.map(g => `<a class="directory-row source-row" data-graph-route="${esc(g.id)}" href="${esc(graphHref(g.id))}"><span class="source-id">${esc(g.id)}</span><div><h3>${esc(titleFor(g))}</h3><p>${esc(SOURCE_DESCRIPTIONS[g.id])}</p></div><span class="source-stat">${number(g.nodeCount)}<small>来源实体</small></span><span class="row-arrow" aria-hidden="true">↗</span></a>`).join('')}</div><p class="directory-note">${external.length}源保持原来的身份与关系，不按同名合并。目录计数来自当前本地登记，进入后核对实际加载；原语言和支持缺口保留。</p></section></div>${extraSection}<div class="scope-note"><span>使用范围</span><p>${scopeText} 能力测量、错误诊断和跨学科完整图谱尚未建成，不拿现有研究关系冒充。</p></div>${licenseNote}</section>`;
     window.ATLAS_STATUS = { ready: true, view: 'overview', graphCount: catalog.counts.browsable, renderedGraphLinks: catalog.graphs.length, version: catalog.version, publicMode };
   }
   function graphDescription(graph) {
@@ -222,22 +223,43 @@
       select.value = state[field] || ''; select.disabled = rows.length <= 1 && !state[field];
     }
     const relations = filters.relations || [];
+    const originalRelations = filters.originalRelations || [];
     const relationSelect = $('#relation-filter');
-    relationSelect.innerHTML = '<option value="all">全部关系</option>' + relations.map(row => `<option value="${esc(row.value)}">${esc(wrapLabel(relationTypeFor({ relation: row.value, label: row.label }), 180, 1)[0])} · ${number(row.count)}</option>`).join('');
+    relationSelect.innerHTML = '<option value="all">原始关系 · 原方向原代码</option>' +
+      `<optgroup label="原始关系代码">${originalRelations.map(row => `<option value="raw:${esc(row.value)}">${esc(wrapLabel(row.label || row.value, 180, 1)[0])} · ${number(row.count)}</option>`).join('')}</optgroup>` +
+      `<optgroup label="导航归一 · 明确非原始方向">${relations.map(row => `<option value="${esc(row.value)}">${esc(wrapLabel(row.label || row.value, 180, 1)[0])}（归一） · ${number(row.count)}</option>`).join('')}</optgroup>`;
     if (state.relation && !relations.some(row => row.value === state.relation)) {
       const option = document.createElement('option'); option.value = state.relation; option.textContent = RELATION_LABELS[state.relation] || state.relation; relationSelect.append(option);
     }
     relationSelect.value = state.relation || 'all';
     relationSelect.disabled = !relations.length;
   }
+  function renderExternalUpstream(graph, frame) {
+    controller?.abort(); clearTimeout(debounce);
+    frame.setAttribute('aria-busy', 'false');
+    $('#request-status').textContent = '原源入口已就绪';
+    $('#scope-alert').innerHTML = '<div class="scope-alert" role="status">S07 原始数据不在本仓库重新分发。这里保留官方项目、原始 TTL 下载与原关系说明。</div>';
+    $('#result-count').textContent = '原源项目';
+    $('#node-results').innerHTML = `<a class="result-button" href="https://edukg.org/" target="_blank" rel="noopener noreferrer">EDUKG 官方原图与样例 ↗</a><a class="result-button" href="https://drive.google.com/file/d/1YoPITzjk2oKoX0k_XbLplu8IUn16bg4-/view?usp=sharing" target="_blank" rel="noopener noreferrer">原始 main.ttl 下载 ↗</a><a class="result-button" href="https://github.com/THU-KEG/EDUKG" target="_blank" rel="noopener noreferrer">原始 GitHub 仓库 ↗</a>`;
+    $('#graph-viewport').innerHTML = `<div class="initial-state"><h2>EDUKG 原始项目</h2><p>8,001 个当前固定快照实体；当前读取模式没有先备边。</p><p>原始实体与教材定位保留在原 TTL 中，不用其他来源补画关系。</p></div>`;
+    $('#object-detail').innerHTML = `<section class="structure-panel"><div class="structure-heading"><h2>原始项目与下载</h2><a href="https://edukg.org/" target="_blank" rel="noopener noreferrer">官方原图呈现 ↗</a></div><p class="structure-note">S07 的原始 RDF 类型、外部对齐和教材定位不是先备关系。当前公开页不复制原始 TTL，也不删除它的入口。</p><div class="original-links"><a href="https://drive.google.com/file/d/1YoPITzjk2oKoX0k_XbLplu8IUn16bg4-/view?usp=sharing" target="_blank" rel="noopener noreferrer">下载官方 main.ttl ↗</a><a href="https://github.com/THU-KEG/EDUKG" target="_blank" rel="noopener noreferrer">查看官方仓库 ↗</a></div></section>`;
+    $('#object-evidence').hidden = true; $('#relation-rows').innerHTML = ''; $('#relations-count').textContent = '原始先备边 0';
+    window.ATLAS_STATUS = { ready: true, view: 'upstream', graph: 'S07', external: true };
+  }
   async function loadBrowse() {
     const id = ++generation; controller?.abort(); controller = new AbortController();
     const signal = controller.signal; const timer = setTimeout(() => controller?.signal === signal && controller.abort(), 25000); const started = performance.now();
     const frame = $('#browse-view'); if (!frame) return;
-    frame.setAttribute('aria-busy', 'true'); $('#request-status').textContent = '正在读取本地图谱…';
+    const graphMeta = catalog.graphs.find(graph => graph.id === state.graph);
+    if (graphMeta?.meta?.upstream?.mode === 'external') {
+      clearTimeout(timer); renderExternalUpstream(graphMeta, frame); return;
+    }
+    frame.setAttribute('aria-busy', 'true'); $('#request-status').textContent = graphMeta?.meta?.upstream?.mode === 'direct' ? '正在从原源直接读取…' : '正在读取本地图谱…';
     try {
       const query = new URLSearchParams(routeQuery(state)); query.set('size', '24');
-      const data = await getJSON(atlasAPI('browse') + '?' + query, signal);
+      const data = graphMeta?.meta?.upstream?.mode === 'direct'
+        ? await window.AtlasUpstreamS05.load(query.toString(), signal)
+        : await getJSON(atlasAPI('browse') + '?' + query, signal);
       if (id !== generation) return;
       current = data;
       state.page = data.list.page; state.edgePage = data.relations.page; state.node = data.selected?.id;
@@ -354,7 +376,7 @@
     });
     viewport.querySelectorAll('[data-edge-index]').forEach(element => { element.onpointerenter = () => { const edge = slice.edges[Number(element.dataset.edgeIndex)]; $('#graph-hover').textContent = `${edge.fromLabel} → ${edge.toLabel} · ${relationFor(edge)}${edge.reason ? '：' + edge.reason : ''}`; }; });
     const allNodes = current.neighborhood.totalNodes, allEdges = current.neighborhood.totalEdges;
-    $('#neighborhood-status').textContent = `当前图显示 ${slice.nodes.length} 个节点、${slice.edges.length} 条连线${slice.truncated ? `；本次邻域共有 ${number(allNodes)} 个节点、${number(allEdges)} 条关系，下方可分页查看当前对象的全部直接关系，两跳关系可沿相邻节点继续查。` : '，对应当前查询的实际邻域。'} 点节点原位更新；可拖动或滚动图形。`;
+    $('#neighborhood-status').textContent = `当前图显示 ${slice.nodes.length} 个节点、${slice.edges.length} 条连线${slice.truncated ? `；本次邻域共有 ${number(allNodes)} 个节点、${number(allEdges)} 条关系，下方可分页查看当前对象的全部直接关系，两跳关系可沿相邻节点继续查。` : '，对应当前查询的实际邻域。'} ${rawRelationMode() ? '原始方向与原始关系代码。' : '导航归一方向，非原始记录方向。'} 点节点原位更新；可拖动或滚动图形。`;
     requestAnimationFrame(centerDiagram); syncZoom();
   }
   function centerDiagram() {
@@ -455,9 +477,12 @@
     $('#relations-intro').textContent = selected ? `围绕「${selected.label}」的直接连接。方向与关系类型按原登记保留。${pageCount > 1 ? ` 所有 ${number(current.relations.total)} 条关系都可在下方分页查看。` : ''}` : '当前没有选中节点，不显示旧对象的关系。';
     const visible = rows;
     $('#relation-rows').innerHTML = visible.length ? visible.map(edge => {
-      const incoming = edge.target === selected?.id; const otherId = incoming ? edge.source : edge.target; const otherLabel = incoming ? edge.fromLabel : edge.toLabel;
+      const source = rawRelationMode() ? edge.originalSource || edge.source : edge.source;
+      const target = rawRelationMode() ? edge.originalTarget || edge.target : edge.target;
+      const incoming = target === selected?.id; const otherId = incoming ? source : target;
+      const otherLabel = current.neighborhood.nodes.find(n => n.id === otherId)?.label || (otherId === edge.source ? edge.fromLabel : otherId === edge.target ? edge.toLabel : otherId);
       const fallback = { prerequisite: '这条先备关系来自原课程 / 来源登记，尚未作为本题必要条件或学习者实证验证。', physical_page: '这是原PDF从1开始的物理页编号，不推定它对应某个未登记章节。', registered_chapter: '这本书中已实际登记的章或片段，未补造其他目录。', chapter_page: '这个章 / 片段对应已登记的PDF物理页。', has_step: '这是作者展示的解题步骤，详细动作与理由保留在步骤节点。', sequence: '表示展示路径的先后，既不排除其他正确解法，也不是学习者已经完成。', binding: '连接来自台账中的真实卷、题号与知识用途。', classroom_registration: '这里只确认已有课堂登记，不读个人学习记录，也不表示效果已验证。' };
-      return `<article class="relation-row"><div class="relation-direction">${esc(relationTypeFor(edge))}<span>${incoming ? '相邻对象 → 当前' : '当前 → 相邻对象'}</span>${edge.status ? `<span>${esc({ direct: '本题操作支持', partial: '部分支持', transfer: '迁移参考', locator: '定位参考', out_of_scope: '范围外', none: '未找到支持', main: '本题主知识', support: '本题辅助知识' }[edge.status] || edge.status)}</span>` : ''}</div><div class="relation-main"><button type="button" class="relation-node-link" data-select-node="${esc(otherId)}">${esc(otherLabel)}</button>${relationFor(edge) !== relationTypeFor(edge) ? `<p class="relation-context">原关系标记：${esc(relationFor(edge))}</p>` : ''}<p>${esc(edge.reason || fallback[edge.relation] || '原来源登记了这条关系；独立的连接理由尚未补充，不据此推出必修或掌握。')}</p>${edge.boundary ? `<p class="relation-boundary">${esc(edge.boundary)}</p>` : ''}${edge.details?.length || edge.source_scope || edge.sourceLocator ? `<details class="relation-proof"><summary>关系原登记与依据</summary>${edge.sourceLocator ? `<p>${esc(cleanLocator(edge.sourceLocator))}</p>` : ''}${edge.source_scope ? `<div>${formatValue(edge.source_scope)}</div>` : ''}${(edge.details || []).map(d => `<p>${esc(fieldLabel(d.label))}：${formatValue(d.value)}</p>`).join('')}</details>` : ''}</div></article>`;
+      return `<article class="relation-row"><div class="relation-direction">${esc(relationTypeFor(edge))}<span>${incoming ? '相邻对象 → 当前' : '当前 → 相邻对象'}</span>${edge.status ? `<span>${esc({ direct: '本题操作支持', partial: '部分支持', transfer: '迁移参考', locator: '定位参考', out_of_scope: '范围外', none: '未找到支持', main: '本题主知识', support: '本题辅助知识' }[edge.status] || edge.status)}</span>` : ''}</div><div class="relation-main"><button type="button" class="relation-node-link" data-select-node="${esc(otherId)}">${esc(otherLabel)}</button>${relationFor(edge) !== relationTypeFor(edge) ? `<p class="relation-context">原关系标记：${esc(relationFor(edge))}</p>` : ''}<p>${esc(edge.reason || fallback[edge.relation] || '原来源登记了这条关系；独立的连接理由尚未补充，不据此推出必修或掌握。')}</p>${rawRelationMode() && (source !== edge.source || target !== edge.target || edge.originalRelation !== edge.relation) ? `<p class="relation-boundary">导航索引（非原始记录）：${esc(edge.relation)} · ${esc(edge.source)} → ${esc(edge.target)}</p>` : ''}${edge.boundary ? `<p class="relation-boundary">${esc(edge.boundary)}</p>` : ''}${edge.details?.length || edge.source_scope || edge.sourceLocator ? `<details class="relation-proof"><summary>关系原登记与依据</summary>${edge.sourceLocator ? `<p>${esc(cleanLocator(edge.sourceLocator))}</p>` : ''}${edge.source_scope ? `<div>${formatValue(edge.source_scope)}</div>` : ''}${(edge.details || []).map(d => `<p>${esc(fieldLabel(d.label))}：${formatValue(d.value)}</p>`).join('')}</details>` : ''}</div></article>`;
     }).join('') : `<p class="relations-empty">${current?.graph.id === 'S07' ? '当前读取模式不支持先备查询。原属性在上方保留，不画虚构连接。' : selected ? '当前关系筛选下没有登记直接连接。可改为“全部关系”，或换一个节点；不等于不存在其他联系。' : '调整关键词或筛选，选择一个实际节点继续。'}</p>`;
     $('#relations-pagination').innerHTML = pageCount > 1 ? `<span>${(relationPage - 1) * pageSize + 1}—${(relationPage - 1) * pageSize + rows.length} / 全部 ${number(current.relations.total)} 条</span><button type="button" id="previous-relations" ${relationPage === 1 ? 'disabled' : ''}>上一组</button><button type="button" id="next-relations" ${relationPage === pageCount ? 'disabled' : ''}>下一组</button>` : '';
     if ($('#previous-relations')) $('#previous-relations').onclick = () => navigate({ ...state, edgePage: relationPage - 1 });
@@ -467,7 +492,7 @@
     const meta = catalog.graphs.find(g => g.id === data.graph.id);
     const readable = [];
     if (meta.family === 'external') {
-      readable.push('原来源：' + meta.sourceName + '。保留原语言与固定本地快照，' + (catalog.scope?.anonymousAccess ? '五源' : '七源') + '不按同名合并。');
+      readable.push('原来源：' + meta.sourceName + '。保留原语言与固定本地快照，' + catalog.counts.external + '源不按同名合并。');
       if (data.graph.meta?.auxiliaryEdgeCount) readable.push(`关系计数：${number(data.graph.meta.nativeEdgeCount)} 条原生边，另保留 ${number(data.graph.meta.auxiliaryEdgeCount)} 条独立数学联系；附加联系不是先备。`);
     }
     else if (data.graph.id === 'curriculum') readable.push('课程分母：509 个，另有 2 个研究扩展；先备引用不自动生成学习路线。');
