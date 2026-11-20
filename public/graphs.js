@@ -172,7 +172,9 @@
     window.ATLAS_STATUS = { ready: true, view: 'overview', graphCount: catalog.counts.browsable, renderedGraphLinks: catalog.graphs.length, version: catalog.version, publicMode };
   }
   function graphDescription(graph) {
-    if (graph.family === 'external') return `${SOURCE_DESCRIPTIONS[graph.id]}。搜索原条目，直接读它的原关系与支持范围。`;
+    const coverageMap = { S01: '99.9', S02: '100', S03: '100', S04: '100', S05: '91.2', S06: '69.6', S07: '0（原生无先备边）', curriculum: '100', foundation: '100', papers: '100', thinking: '100', textbooks: '100', mapping: '99.5', ledger: '100' };
+    const coverageNote = coverageMap[graph.id] ? ` 原始关系实体覆盖 ${coverageMap[graph.id]}%。` : '';
+    if (graph.family === 'external') return `${SOURCE_DESCRIPTIONS[graph.id]}。搜索原条目，直接读它的原关系与支持范围。${coverageNote}`;
     const descriptions = { curriculum: '从一个知识看它的含义、基础与后续连接。509 个课程节点，2 个研究扩展单列，不当作官方逐题标签。', foundation: '从小学、初中知识看基础如何连接。来源是本地课程设计，先备关系是课程组织建议。', papers: '看具体题目用了什么知识、为什么这样连接，以及同卷和跨卷有哪些联系。', thinking: '把题目、思考步骤与关键机制接在一起。动作与理由直接呈现，不把展示顺序当作必修路线。', textbooks: '看书、已登记章节与真实物理页。教材 5 本，教辅 29 份；有页节点不代表这一页已核读。', mapping: '看知识、具体要求与七源支持的连接。名称候选、部分支持、方法迁移和教材定位保持区别。', ledger: '看已研究知识绑定了哪些卷题，哪些已经有课堂或练习、哪些还缺。不是个人学习进度。' };
     return descriptions[graph.id] || graph.subtitle;
   }
