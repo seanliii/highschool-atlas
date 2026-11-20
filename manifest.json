@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "service": "highschool-atlas",
-  "releaseId": "atlas-20261120-8d09e8ea3113",
-  "generatedAt": "2026-11-20T07:08:49.283590+00:00",
+  "releaseId": "atlas-20261120-edd76a798c9f",
+  "generatedAt": "2026-11-20T18:45:14.078497+00:00",
   "origin": "https://play.vortexsean.com",
   "prefix": "/highschool-atlas/",
   "deploy": {
@@ -54,12 +54,12 @@
       "sha256": "10d3eedb644aeeb39c007c3333cac5d4400c1b88650bb29c9e57419db916ba07"
     },
     "graph_browser.py": {
-      "bytes": 97471,
-      "sha256": "eb7300141702d0e843f6250f6af9c78ac480f0874af7f897ee6b05c1ec1233ba"
+      "bytes": 98176,
+      "sha256": "c0341528079af60dfb05819ce50fcc0b0bce894052decf27c5b19ee770ffef90"
     },
     "graph_manifest.json": {
       "bytes": 22044,
-      "sha256": "9512542ae099f5748ca9ea3d380c78301ecb2e40a0b6831a2877924d5c310067"
+      "sha256": "ea87b8f5b8dac797c1ddd57f5a8f74e61a9c913d305ec422587989dadd5533f4"
     },
     "licenses/S01-CONTENT-CC-BY-SA.txt": {
       "bytes": 18375,
@@ -138,20 +138,20 @@
       "sha256": "cb3eefe8dffe0b4c513b086baeb19044da7397f7f0845d0d0a8909e448794c82"
     },
     "public/graphs.css": {
-      "bytes": 27265,
-      "sha256": "4da13fdcb65da51acf87f11623bcb5ffaa1e8449a7c1aa116819dfc69a456f43"
+      "bytes": 27459,
+      "sha256": "16ad585d029ffa7089dfc6b442316c37568dd88fd5d1bf315461c0ed6ae78bf8"
     },
     "public/graphs.html": {
       "bytes": 2138,
       "sha256": "d7cf26c9848f445793ade8873662da91246e8292b095ff73269799a788a6e527"
     },
     "public/graphs.js": {
-      "bytes": 70618,
-      "sha256": "eba83fc19643a142ec423f93e301bd2d3087cea31969a4a7e97c50075349f84e"
+      "bytes": 70986,
+      "sha256": "750b738eb3d637280af35e450ca7ec4e2648cc3b1929ac7408cd8b3103b981d8"
     },
     "public/upstream_s05.js": {
-      "bytes": 11988,
-      "sha256": "d9aa4b1aa1f5a83e71e83da3fcb3d9247b3de75ea0dc178ca65f6207ac6ff053"
+      "bytes": 12282,
+      "sha256": "48ecd29c459f44bd5cd7ca40c001b23312dd0e20a76ad5876e5dcde2c7f30669"
     }
   },
   "frontend": {

@@ -162,6 +162,7 @@
         originalRelations: [...originalCounts].sort().map(([value, count]) => ({ value, label: value, count })) },
       list: { nodes: pageNodes.map(summary), total: filtered.length, page, size, pages },
       selected, structure: makeStructure(selected),
+      coverage: (() => { const out = model.indexes.originalOutgoing.get(selected?.id)?.length || 0, inc = model.indexes.originalIncoming.get(selected?.id)?.length || 0; return { originalOutgoing: out, originalIncoming: inc, originalTotal: out + inc, hasOriginalRelation: out + inc > 0 }; })(),
       neighborhood: { nodes: order.slice(0, 40).map(id => ({ ...summary(model.nodes[id]), distance: distance[id] })),
         edges: neighborhoodEdges.filter(edge => shown.has(sourceOf(edge)) && shown.has(targetOf(edge))).slice(0, 80),
         totalNodes: reached.size, totalEdges: neighborhoodEdges.length, truncated: reached.size > 40 || neighborhoodEdges.length > 80, nodeLimit: 40, edgeLimit: 80 },

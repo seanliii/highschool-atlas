@@ -1,0 +1,242 @@
+{
+  "graphs": [
+    {
+      "id": "S01",
+      "nodes": 1845,
+      "edges": 3941,
+      "entitiesWithOriginalRelation": 1844,
+      "entitiesWithNoRelation": 1,
+      "coveragePercent": 99.9,
+      "uncoveredByKind": {
+        "knowledge": 1
+      },
+      "coveredByKind": {
+        "knowledge": 1701,
+        "source": 143
+      },
+      "contentProvenance": {
+        "original_body": 1845
+      }
+    },
+    {
+      "id": "S02",
+      "nodes": 10685,
+      "edges": 23278,
+      "entitiesWithOriginalRelation": 10685,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 7938,
+        "experiment": 652,
+        "question": 1174,
+        "book": 48,
+        "chapter": 873
+      },
+      "contentProvenance": {
+        "structure_explanation": 8322,
+        "reading_supplement": 2,
+        "original_body": 1895,
+        "no_content": 468
+      }
+    },
+    {
+      "id": "S03",
+      "nodes": 2331,
+      "edges": 3711,
+      "entitiesWithOriginalRelation": 2331,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 2331
+      },
+      "contentProvenance": {
+        "original_body": 2331
+      }
+    },
+    {
+      "id": "S04",
+      "nodes": 1273,
+      "edges": 1647,
+      "entitiesWithOriginalRelation": 1273,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 1220,
+        "source": 53
+      },
+      "contentProvenance": {
+        "original_body": 1273
+      }
+    },
+    {
+      "id": "S05",
+      "nodes": 6657,
+      "edges": 9297,
+      "entitiesWithOriginalRelation": 6068,
+      "entitiesWithNoRelation": 589,
+      "coveragePercent": 91.2,
+      "uncoveredByKind": {
+        "knowledge": 589
+      },
+      "coveredByKind": {
+        "knowledge": 6068
+      },
+      "contentProvenance": {
+        "original_body": 6657
+      }
+    },
+    {
+      "id": "S06",
+      "nodes": 33765,
+      "edges": 21536,
+      "entitiesWithOriginalRelation": 23498,
+      "entitiesWithNoRelation": 10267,
+      "coveragePercent": 69.6,
+      "uncoveredByKind": {
+        "knowledge": 10267
+      },
+      "coveredByKind": {
+        "knowledge": 23498
+      },
+      "contentProvenance": {
+        "original_body": 33765
+      }
+    },
+    {
+      "id": "S07",
+      "nodes": 8001,
+      "edges": 0,
+      "entitiesWithOriginalRelation": 0,
+      "entitiesWithNoRelation": 8001,
+      "coveragePercent": 0.0,
+      "uncoveredByKind": {
+        "source": 8001
+      },
+      "coveredByKind": {},
+      "contentProvenance": {
+        "structure_explanation": 8001
+      }
+    },
+    {
+      "id": "curriculum",
+      "nodes": 511,
+      "edges": 976,
+      "entitiesWithOriginalRelation": 511,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 511
+      },
+      "contentProvenance": {
+        "no_content": 511
+      }
+    },
+    {
+      "id": "foundation",
+      "nodes": 189,
+      "edges": 361,
+      "entitiesWithOriginalRelation": 189,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 189
+      },
+      "contentProvenance": {
+        "no_content": 189
+      }
+    },
+    {
+      "id": "papers",
+      "nodes": 557,
+      "edges": 2088,
+      "entitiesWithOriginalRelation": 557,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 347,
+        "question": 210
+      },
+      "contentProvenance": {
+        "no_content": 557
+      }
+    },
+    {
+      "id": "thinking",
+      "nodes": 1112,
+      "edges": 1686,
+      "entitiesWithOriginalRelation": 1112,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "mechanism": 191,
+        "question": 187,
+        "step": 734
+      },
+      "contentProvenance": {
+        "no_content": 1112
+      }
+    },
+    {
+      "id": "textbooks",
+      "nodes": 5942,
+      "edges": 5927,
+      "entitiesWithOriginalRelation": 5942,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "book": 34,
+        "page": 5900,
+        "chapter": 8
+      },
+      "contentProvenance": {
+        "no_content": 5942
+      }
+    },
+    {
+      "id": "mapping",
+      "nodes": 4167,
+      "edges": 6907,
+      "entitiesWithOriginalRelation": 4146,
+      "entitiesWithNoRelation": 21,
+      "coveragePercent": 99.5,
+      "uncoveredByKind": {
+        "knowledge": 21
+      },
+      "coveredByKind": {
+        "knowledge": 2121,
+        "mapping": 2004,
+        "question": 19,
+        "page": 2
+      },
+      "contentProvenance": {
+        "no_content": 4167
+      }
+    },
+    {
+      "id": "ledger",
+      "nodes": 390,
+      "edges": 563,
+      "entitiesWithOriginalRelation": 390,
+      "entitiesWithNoRelation": 0,
+      "coveragePercent": 100.0,
+      "uncoveredByKind": {},
+      "coveredByKind": {
+        "knowledge": 171,
+        "question": 210,
+        "unit": 8,
+        "mapping": 1
+      },
+      "contentProvenance": {
+        "no_content": 390
+      }
+    }
+  ]
+}

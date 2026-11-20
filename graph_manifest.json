@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "service": "highschool-atlas",
-  "generatedAt": "2026-11-20T07:08:49.283590+00:00",
+  "generatedAt": "2026-11-20T18:45:14.078497+00:00",
   "catalogVersion": "open-full-20261120-09cc1708d0f2",
   "notice": "完整14个入口。原始边不改为导航边；S05原源直读，S07原项目与TTL下载。",
   "graphs": [

@@ -278,6 +278,8 @@ button[aria-pressed="true"] { background: var(--accent-soft); }
 .structure-facets { display: flex; flex-wrap: wrap; gap: 5px; }
 .structure-facets span { padding: 3px 7px; border: 1px solid var(--line); border-radius: 5px; color: var(--muted); font-size: 10px; }
 .structure-note { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
+.object-coverage { margin: 0; font-size: 11px; color: var(--secondary); }
+.object-coverage.coverage-empty { color: var(--muted); background: var(--soft); border-radius: 6px; padding: 5px 8px; }
 @media (min-width: 1600px) { .current-object { grid-template-columns: minmax(0, 1fr) 338px; } }
 @media (max-width: 1250px) {
   .current-object { grid-template-columns: minmax(0, 1fr); }

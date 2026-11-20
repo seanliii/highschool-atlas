@@ -412,6 +412,17 @@ class Projection:
         return {'mode': mode, 'paths': paths[:12], 'facets': facets[:12], 'note': note,
                 'truncated': max(0, len(paths) - 12)}
 
+    def node_relation_coverage(self, selected):
+        """Per-entity original relation coverage, counted on original endpoints."""
+        if not selected:
+            return {'originalOutgoing': 0, 'originalIncoming': 0, 'originalTotal': 0, 'hasOriginalRelation': False}
+        ident = selected['id']
+        out_count = sum(1 for e in self.originalOutgoing.get(ident, []))
+        in_count = sum(1 for e in self.originalIncoming.get(ident, []))
+        total = out_count + in_count
+        return {'originalOutgoing': out_count, 'originalIncoming': in_count,
+                'originalTotal': total, 'hasOriginalRelation': total > 0}
+
     def browse(self, params):
         values = list(self.nodes.values())
         filters = {}
@@ -511,6 +522,7 @@ class Projection:
                 'list': {'nodes': [summary(n) for n in page_nodes], 'total': len(filtered), 'page': page, 'size': size, 'pages': pages},
                 'selected': selected,
                 'structure': self.structure(selected),
+                'coverage': self.node_relation_coverage(selected),
                 'neighborhood': {'nodes': [dict(summary(self.nodes[i]), distance=distance[i]) for i in order[:NODE_LIMIT]],
                                  'edges': shown_edges, 'totalNodes': len(reached), 'totalEdges': len(neighborhood_edges),
                                  'truncated': len(reached) > len(shown) or len(neighborhood_edges) > len(shown_edges), 'nodeLimit': NODE_LIMIT, 'edgeLimit': EDGE_LIMIT},

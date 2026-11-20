@@ -1,0 +1,1107 @@
+{
+  "total": 100,
+  "passed": 100,
+  "failed": 0,
+  "byGraph": {
+    "S01": 7,
+    "S02": 7,
+    "S03": 7,
+    "S04": 7,
+    "S05": 7,
+    "S06": 7,
+    "S07": 7,
+    "curriculum": 7,
+    "foundation": 7,
+    "papers": 7,
+    "thinking": 7,
+    "textbooks": 7,
+    "mapping": 7,
+    "ledger": 7
+  },
+  "failures": [],
+  "cases": [
+    {
+      "graph": "S01",
+      "node": "S01:mt_CUmjcE7W6c",
+      "originalRelations": 4,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_Ag9NSWJu-X",
+      "originalRelations": 6,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_xmmgAzxe5j",
+      "originalRelations": 5,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_J339bO7qLe",
+      "originalRelations": 1,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_HJTuIGHvcR",
+      "originalRelations": 2,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_5r47Pvstyn",
+      "originalRelations": 2,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S01",
+      "node": "S01:mt_rKwE6w2V6G",
+      "originalRelations": 0,
+      "structure": "taxonomy",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:biology_xzxbx3_rjb_cpt173",
+      "originalRelations": 2,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:math_5b_rjb_cpt34",
+      "originalRelations": 6,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:biology_xzxbx1_rjb_exp8",
+      "originalRelations": 2,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:math_6b_rjb_skl1",
+      "originalRelations": 2,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:biology_xzxbx3_rjb_cpt107",
+      "originalRelations": 4,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:biology_xzxbx3_rjb_exe1",
+      "originalRelations": 3,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S02",
+      "node": "S02:chemistry_xzxbx2_rjb_cpt111",
+      "originalRelations": 2,
+      "structure": "native",
+      "relationTypes": [
+        "appears_in",
+        "is_a",
+        "is_part_of",
+        "leads_to",
+        "prerequisites_for",
+        "relates_to"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cne_p063",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cnc_p075",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cne_h195",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cne_h045",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cnm_h068",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cnc_p403",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S03",
+      "node": "S03:cne_j162",
+      "originalRelations": 3,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "mathLink",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_junior-probability-concept",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_sci-sound",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_junior-rational-power",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_junior-cn-regular-script",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_junior-bio-seed-plant",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_mat-s-function-zero",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S04",
+      "node": "S04:mt_chem-s-organic-feature",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:phy-9f-c16-04",
+      "originalRelations": 5,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:sci-2a-u03-05",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:phy-b2-c05-07",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:his-x2-u05-06",
+      "originalRelations": 3,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:phy-9f-c14-06",
+      "originalRelations": 7,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:phy-9f-c16-05",
+      "originalRelations": 6,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S05",
+      "node": "S05:chi-1a-u06-03",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:fdae0354-01ca-4b66-888c-696d01d5ba0b",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:7cebb55a-3b61-4621-9046-a0c62a637c62",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:7550d612-4dbc-4c6e-b2f7-81193b39c23b",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:7f1ae631-1aac-4027-9e1d-e39bbc6ef021",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:8bb6af44-ae04-4600-97c7-bb50460759c9",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:2daab153-3823-420d-b98b-5eec9a065067",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S06",
+      "node": "S06:58fee27e-230f-4d17-9710-ebf2eba2ee39",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": [
+        "leads-to",
+        "prerequisite",
+        "related"
+      ]
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/chinese#temp-E1698",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/biology#main-E2160",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/history#main-E4065",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/physics#temp-E2097",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/geo#main-E913",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/geo#temp-E1002",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "S07",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/chinese#main-E2621",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": []
+    },
+    {
+      "graph": "curriculum",
+      "node": "chinese-g04-02",
+      "originalRelations": 8,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "en-grammar-phrase-structures",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "en-grammar-adjectives-adverbs",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "chinese-write-06",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "m-survey-methods",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "m-regression-prediction",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "curriculum",
+      "node": "m-music-math",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "j-extra-inequality-closed",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "likelihood",
+      "originalRelations": 5,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "counting",
+      "originalRelations": 6,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "j-extra-sampling-bias",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "j-projection",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "j-extra-weighted",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "foundation",
+      "node": "j-fractions",
+      "originalRelations": 6,
+      "structure": "metadata",
+      "relationTypes": [
+        "prerequisite"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "en-grammar-agreement",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "find-counterexample",
+      "originalRelations": 10,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "math-2023-national1:q13",
+      "originalRelations": 10,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "m-independence",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "chinese-2024-national1:q19",
+      "originalRelations": 6,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "math-2025-national1:q4",
+      "originalRelations": 17,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "papers",
+      "node": "en-vocab-nuance",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "external_bridge",
+        "mapping"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2025-national2:q12:step2",
+      "originalRelations": 3,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2026-national1:q6:step4",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2023-national1:q15:step1",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2026-national1:q9:step4",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "english-2026-national1:q27:step1",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2025-national2:q3:step1",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "thinking",
+      "node": "math-2025-national1:q9:mechanism",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "classification",
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "ct-junior8b:p143",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "53-f4fdad202a821ef0:p64",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "53-fafe31300870e9e9:p23",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "ct-primary3a:p34",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "53-cacb601164b43f13:p133",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "53-e6b7875ebe250030:p155",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "textbooks",
+      "node": "ct-senior1:p225",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/chinese#main-E267",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "S07:http://edukg.org/knowledge/3.0/instance/math#main-E235",
+      "originalRelations": 6,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "S03:cnm_h255",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "S04:mt_mat-s-geometric",
+      "originalRelations": 7,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "S03:cne_h093",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "mapping:S05:math2025-q06-d02",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "mapping",
+      "node": "m-music-instruments",
+      "originalRelations": 0,
+      "structure": "metadata",
+      "relationTypes": [
+        "aligned",
+        "broader",
+        "candidate",
+        "conditional_probe",
+        "contrast",
+        "demand_mapping"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "en-vocab-word-formation",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "chinese-g06-02",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "m-arithmetic-sum",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "math-2026-national1:q12",
+      "originalRelations": 1,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "chinese-2024-national1:q3",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "english-2026-national1:q67",
+      "originalRelations": 4,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    },
+    {
+      "graph": "ledger",
+      "node": "english-2026-national1:q39",
+      "originalRelations": 2,
+      "structure": "metadata",
+      "relationTypes": [
+        "binding",
+        "classroom_registration",
+        "designed_route"
+      ]
+    }
+  ],
+  "extraNavigationCases": [
+    {
+      "query": "graph=S02&node=S02%3Abiology_7a_rjb_cpt1",
+      "filter": "raw:appears_in",
+      "edges": 1
+    },
+    {
+      "query": "graph=S01&node=S01%3Amt__00ZSLnB7p",
+      "filter": "raw:hard",
+      "edges": 2
+    }
+  ]
+}
