@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "service": "highschool-atlas",
+  "generatedAt": "2026-11-20T04:26:50.098823+00:00",
+  "catalogVersion": "open-20261120-1f8dd70c8294",
+  "notice": "公开非商业只读快照。归属结构与先备/相关语义关系分层；五源许可证与署名保留。",
+  "graphs": [
+    {
+      "id": "S01",
+      "file": "private/graphs/S01.json.xz",
+      "sha256": "67f8e7985ab599799a216d7c797bb62f08f1bbf67e05812b4830517970a7dfa9",
+      "bytes": 811956,
+      "nodeCount": 1845,
+      "edgeCount": 3941,
+      "title": "withmarbleapp/os-taxonomy",
+      "subtitle": "topics.json + dependencies.json; age ranges are not converted into Chinese grades/stages；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "family": "external",
+      "boundary": "topics.json + dependencies.json; age ranges are not converted into Chinese grades/stages；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:fa310b1770b1a4c8268e85e33dab36810850b62bc2fbf4d83e9eb43eb8f76937",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 1845,
+          "edges": 3941,
+          "subjects": {
+            "Computing": 52,
+            "English": 331,
+            "Geography": 22,
+            "History": 109,
+            "Learning to Learn": 18,
+            "Life Skills": 44,
+            "Mathematics": 576,
+            "Personal & Social Development": 117,
+            "Science": 576
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 1845,
+          "edges": 3941,
+          "subjects": {
+            "Computing": 52,
+            "English": 331,
+            "Geography": 22,
+            "History": 109,
+            "Learning to Learn": 18,
+            "Life Skills": 44,
+            "Mathematics": 576,
+            "Personal & Social Development": 117,
+            "Science": 576
+          }
+        },
+        "uniqueNodes": 1845,
+        "nativeEdgeCount": 3941,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 3941,
+        "kindCounts": {
+          "knowledge": 1702,
+          "source": 143
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 1845,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 0,
+        "license": {
+          "spdx": "ODbL-1.0 + CC-BY-SA-4.0",
+          "url": "https://github.com/withmarbleapp/os-taxonomy",
+          "attribution": "Marble / Generative Spark, Inc."
+        }
+      },
+      "uncompressedSha256": "0c3bdecccf2827bf6b7b07f14c2ca8b7b07dae499db72f679ad73d81c9212e5f"
+    },
+    {
+      "id": "S02",
+      "file": "private/graphs/S02.json.xz",
+      "sha256": "1b33d31d3d2e12094b00a861de506da0f851fddd7f66e05c50c55eeb04b1a201",
+      "bytes": 1797636,
+      "nodeCount": 10685,
+      "edgeCount": 23278,
+      "title": "haolpku/K12-KGraph + lhpku20010120/K12-KGraph",
+      "subtitle": "global_KG text projection; math subject projection inspected separately, never added to global counts；来源授权与学段原值保留；不是全库覆盖",
+      "family": "external",
+      "boundary": "global_KG text projection; math subject projection inspected separately, never added to global counts；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:42eeef357a82c15341229997ac770a64fb111dfebbdfac395e603f815d28845d",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 10685,
+          "edges": 23278,
+          "subjects": {
+            "生物学": 2458,
+            "化学": 3491,
+            "数学": 2711,
+            "物理": 2025
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 10685,
+          "edges": 23278,
+          "subjects": {
+            "生物学": 2458,
+            "化学": 3491,
+            "数学": 2711,
+            "物理": 2025
+          }
+        },
+        "uniqueNodes": 10685,
+        "nativeEdgeCount": 23278,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 23278,
+        "kindCounts": {
+          "knowledge": 7938,
+          "experiment": 652,
+          "question": 1174,
+          "book": 48,
+          "chapter": 873
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 2363,
+        "readingSupplementCount": 2,
+        "structureExplanationCount": 8322,
+        "license": {
+          "spdx": "CC-BY-NC-SA-4.0",
+          "url": "https://github.com/haolpku/K12-KGraph",
+          "attribution": "K12-KGraph Authors"
+        }
+      },
+      "uncompressedSha256": "39bf10bac069adecde12ff531cce3f743915b2e20691fcc3d20c8c575a19f07b"
+    },
+    {
+      "id": "S03",
+      "file": "private/graphs/S03.json.xz",
+      "sha256": "506d0389da584641f5e341b783787834fca18d9b0140195fc816aefcd40c6882",
+      "bytes": 555668,
+      "nodeCount": 2331,
+      "edgeCount": 3711,
+      "title": "xiaoyang111222/cn-math-taxonomy",
+      "subtitle": "fixed requested revision; math/Chinese/English/physics; mathLinks counted separately；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "family": "external",
+      "boundary": "fixed requested revision; math/Chinese/English/physics; mathLinks counted separately；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:bba71da031958e3994a83adbc1d5ed2b9f50b7019cdd8d33dba5eefd24489fef",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 2331,
+          "edges": 3613,
+          "subjects": {
+            "数学": 845,
+            "english": 724,
+            "physics": 269,
+            "chinese": 493
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 2331,
+          "edges": 3613,
+          "subjects": {
+            "数学": 845,
+            "english": 724,
+            "physics": 269,
+            "chinese": 493
+          }
+        },
+        "uniqueNodes": 2331,
+        "nativeEdgeCount": 3613,
+        "auxiliaryEdgeCount": 98,
+        "projectionEdgeCount": 3711,
+        "kindCounts": {
+          "knowledge": 2331
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 2331,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 0,
+        "license": {
+          "spdx": "CC-BY-NC-4.0",
+          "url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
+          "attribution": "cn-math-taxonomy Authors"
+        }
+      },
+      "uncompressedSha256": "f4037e177115ec36d54d6d313100d1f8758d8606fb1a2c089889b637aa021e5d"
+    },
+    {
+      "id": "S04",
+      "file": "private/graphs/S04.json.xz",
+      "sha256": "defad89bcdbbde2191bff33f81629749d713c97289ae970276beaa818e0f925e",
+      "bytes": 386872,
+      "nodeCount": 1273,
+      "edgeCount": 1647,
+      "title": "goralcao/china-skill-taxonomy",
+      "subtitle": "topics.json + dependencies.json; original stage strings and grade ranges retained；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "family": "external",
+      "boundary": "topics.json + dependencies.json; original stage strings and grade ranges retained；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:63dfbd68783edf8a2ccb2bb8a89116271afdbc99e6ccd0d07fd0e0864893fa06",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 1273,
+          "edges": 1647,
+          "subjects": {
+            "数学": 239,
+            "语文": 177,
+            "英语": 140,
+            "物理": 98,
+            "化学": 96,
+            "历史": 115,
+            "地理": 99,
+            "科学": 39,
+            "道德与法治": 61,
+            "生物": 109,
+            "思想政治": 52,
+            "技术": 48
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 1273,
+          "edges": 1647,
+          "subjects": {
+            "数学": 239,
+            "语文": 177,
+            "英语": 140,
+            "物理": 98,
+            "化学": 96,
+            "历史": 115,
+            "地理": 99,
+            "科学": 39,
+            "道德与法治": 61,
+            "生物": 109,
+            "思想政治": 52,
+            "技术": 48
+          }
+        },
+        "uniqueNodes": 1273,
+        "nativeEdgeCount": 1647,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 1647,
+        "kindCounts": {
+          "knowledge": 1220,
+          "source": 53
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 1273,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 0,
+        "license": {
+          "spdx": "ODbL-1.0 + CC-BY-SA-4.0",
+          "url": "https://github.com/goralcao/china-skill-taxonomy",
+          "attribution": "China Skill Taxonomy Authors"
+        }
+      },
+      "uncompressedSha256": "ed8617b77790622443356fa117e670e18aa151e94eddfa57748387834b45259f"
+    },
+    {
+      "id": "S06",
+      "file": "private/graphs/S06.json.xz",
+      "sha256": "35c56ecd61c1114ab1306230fc4b37fe249611dfc213c9d89be51432773b23a8",
+      "bytes": 12880532,
+      "nodeCount": 33765,
+      "edgeCount": 21536,
+      "title": "mmlong818/k12-knowledge-points",
+      "subtitle": "all 39 split group JSON files; not the duplicate all-in-one export or textbook PDFs；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "family": "external",
+      "boundary": "all 39 split group JSON files; not the duplicate all-in-one export or textbook PDFs；来源授权与学段原值保留；不是全库覆盖或学生掌握。",
+      "version": "sha256:e77f5feb26c6bb11a6ba96c1f7f68cd61fdcc7e78bf0ae7f7f0e8eccecc8c9b2",
+      "meta": {
+        "sourceCounts": {
+          "nodes": 33765,
+          "edges": 21536,
+          "subjects": {
+            "体育": 1836,
+            "俄语": 68,
+            "化学": 1072,
+            "历史": 1630,
+            "地理": 1320,
+            "思政": 2867,
+            "数学": 4607,
+            "日语": 120,
+            "物理": 1265,
+            "生物": 1476,
+            "美术": 2128,
+            "艺术": 950,
+            "英语": 2936,
+            "语文": 7843,
+            "通用": 1248,
+            "音乐": 2317,
+            "科学": 82
+          }
+        },
+        "originalSourceCounts": {
+          "nodes": 33765,
+          "edges": 21536,
+          "subjects": {
+            "体育": 1836,
+            "俄语": 68,
+            "化学": 1072,
+            "历史": 1630,
+            "地理": 1320,
+            "思政": 2867,
+            "数学": 4607,
+            "日语": 120,
+            "物理": 1265,
+            "生物": 1476,
+            "美术": 2128,
+            "艺术": 950,
+            "英语": 2936,
+            "语文": 7843,
+            "通用": 1248,
+            "音乐": 2317,
+            "科学": 82
+          }
+        },
+        "uniqueNodes": 33765,
+        "nativeEdgeCount": 21536,
+        "auxiliaryEdgeCount": 0,
+        "projectionEdgeCount": 21536,
+        "kindCounts": {
+          "knowledge": 33765
+        },
+        "projectionLoaded": true,
+        "prerequisite_supported": true,
+        "originalContentCount": 33765,
+        "readingSupplementCount": 0,
+        "structureExplanationCount": 0,
+        "license": {
+          "spdx": "PolyForm-Noncommercial-1.0.0",
+          "url": "https://github.com/mmlong818/k12-knowledge-points",
+          "attribution": "mmlong818/k12-knowledge-points Authors"
+        }
+      },
+      "uncompressedSha256": "ebf7a18413eb539408e28e1e3832e06b937b73aec921c34783b0df49fb0a79c3"
+    }
+  ],
+  "counts": {
+    "external": 5,
+    "local": 0,
+    "supplementary": 0,
+    "browsable": 5
+  }
+}

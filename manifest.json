@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "service": "highschool-atlas",
+  "releaseId": "atlas-20261120-dfbaee56fd1a",
+  "generatedAt": "2026-11-20T04:26:50.098823+00:00",
+  "origin": "https://play.vortexsean.com",
+  "prefix": "/highschool-atlas/",
+  "deploy": {
+    "host": "play.vortexsean.com",
+    "route": "public reverse_proxy without basic_auth",
+    "runtime": "loopback 127.0.0.1:19882",
+    "repository": "https://github.com/seanliii/highschool-atlas"
+  },
+  "scope": {
+    "privateGrant": "",
+    "anonymousAccess": true,
+    "publicRedistributionAllowed": true,
+    "gateRequired": false,
+    "liveOnly": false,
+    "originalContentOrigin": "仅五份许可明确的外源固定快照；各自原许可证与署名保留，不宣称全部MIT。",
+    "sourceLicensing": "S01/S04 ODbL+CC BY-SA；S02 CC BY-NC-SA；S03 CC BY-NC；S06 PolyForm Noncommercial。",
+    "repository": "https://github.com/seanliii/highschool-atlas",
+    "roles": {
+      "owner": "seanvortex",
+      "viewers": "公开匿名只读（非商业条件按各源许可证）",
+      "redistributors": "按各源许可证"
+    }
+  },
+  "counts": {
+    "graphs": 5,
+    "primaryGraphs": 5,
+    "external": 5,
+    "local": 0,
+    "supplementary": 0
+  },
+  "stats": {
+    "nodes": 49899,
+    "edges": 54113,
+    "graphBytes": 16432664,
+    "uncompressedBytes": 389182320,
+    "compression": "xz lossless, per-graph lazy decompression"
+  },
+  "files": {
+    "LICENSE": {
+      "bytes": 1219,
+      "sha256": "c369a4622c1a30bf5e3d20270304978b7b16b1ca37fd02f94abb6d4d37706e62"
+    },
+    "NOTICE": {
+      "bytes": 1152,
+      "sha256": "c7cf312367f43173461184c7b6086dd68c144fffcd7bd4cc2ba0c5738b892f6b"
+    },
+    "atlas_public.py": {
+      "bytes": 23842,
+      "sha256": "d2dccc150c1c4d2f6a5a0ac17c0c55be18327016da7aac052ff815e156b010ac"
+    },
+    "graph_browser.py": {
+      "bytes": 95033,
+      "sha256": "8c5984a82eeebd98283ba9040d62ed86df80ef95ce5f9cc15194441c75175c04"
+    },
+    "graph_manifest.json": {
+      "bytes": 11828,
+      "sha256": "04afbb60d8464cc5e77a2d62809c20340d2be73c1bba9693651863275f616a56"
+    },
+    "licenses/S01-CONTENT-CC-BY-SA.txt": {
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    "licenses/S01-ODbL.txt": {
+      "bytes": 25289,
+      "sha256": "77d2692c3d64efdd4db18dce2407699baf62930e2b50d6e5ed90b48acf16b7c1"
+    },
+    "licenses/S02-CC-BY-NC-SA.txt": {
+      "bytes": 2244,
+      "sha256": "6c16319398a96728ccca96a32b7441ac48e0c85cfde7055f95775150e7fd9a49"
+    },
+    "licenses/S03-CC-BY-NC.txt": {
+      "bytes": 19347,
+      "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+    },
+    "licenses/S04-CONTENT-CC-BY-SA.txt": {
+      "bytes": 20991,
+      "sha256": "3b130cfa38db2583ab79e4bfd33d042e83895998fc08377a7439d1191bbb1065"
+    },
+    "licenses/S04-ODbL.txt": {
+      "bytes": 26122,
+      "sha256": "8494d6ba7aed436e8aea640066c3c2d23d67f1b2725c22a5769163690d7338d7"
+    },
+    "licenses/S06-PolyForm-Noncommercial.txt": {
+      "bytes": 4563,
+      "sha256": "c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5"
+    },
+    "private/graphs/S01.json.xz": {
+      "bytes": 811956,
+      "sha256": "67f8e7985ab599799a216d7c797bb62f08f1bbf67e05812b4830517970a7dfa9"
+    },
+    "private/graphs/S02.json.xz": {
+      "bytes": 1797636,
+      "sha256": "1b33d31d3d2e12094b00a861de506da0f851fddd7f66e05c50c55eeb04b1a201"
+    },
+    "private/graphs/S03.json.xz": {
+      "bytes": 555668,
+      "sha256": "506d0389da584641f5e341b783787834fca18d9b0140195fc816aefcd40c6882"
+    },
+    "private/graphs/S04.json.xz": {
+      "bytes": 386872,
+      "sha256": "defad89bcdbbde2191bff33f81629749d713c97289ae970276beaa818e0f925e"
+    },
+    "private/graphs/S06.json.xz": {
+      "bytes": 12880532,
+      "sha256": "35c56ecd61c1114ab1306230fc4b37fe249611dfc213c9d89be51432773b23a8"
+    },
+    "public/graphs.css": {
+      "bytes": 27265,
+      "sha256": "4da13fdcb65da51acf87f11623bcb5ffaa1e8449a7c1aa116819dfc69a456f43"
+    },
+    "public/graphs.html": {
+      "bytes": 2113,
+      "sha256": "cfcb6ff27b6816ee6de217fb208d5bde24adad375616a9bc81ebac37d34027ec"
+    },
+    "public/graphs.js": {
+      "bytes": 66691,
+      "sha256": "3f1052f0b8eccaa3a1e84c7229f4f20cd360e6f6286716a92772191976da88c5"
+    }
+  },
+  "frontend": {
+    "entry": "/highschool-atlas/graphs.html",
+    "config": "body data attributes data-atlas-prefix/data-atlas-deployed",
+    "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-ancestors 'self'"
+  },
+  "runtime": {
+    "port": 19882,
+    "bind": "127.0.0.1",
+    "semaphore": 8,
+    "gateRequired": true,
+    "endpoints": [
+      "/highschool-atlas/api/atlas/catalog",
+      "/highschool-atlas/api/atlas/browse",
+      "/highschool-atlas/health"
+    ]
+  },
+  "omissions": [
+    "S05与S07：未确认公开再分发授权",
+    "本地题卷、教材/PDF物理页与学习记录",
+    "任何凭据、原始PDF、个人绝对路径或私有课堂数据"
+  ]
+}

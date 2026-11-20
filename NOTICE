@@ -1,0 +1,25 @@
+知题 · 公开知识图谱
+https://github.com/seanliii/highschool-atlas
+
+Original project code: MIT. Public noncommercial use only where required by a source license.
+Only S01, S02, S03, S04 and S06 are included. S05, S07, local papers,
+textbook/page projections, personal records, credentials and source PDFs are excluded.
+Changes: normalized graph projections, bounded neighborhood APIs, source-backed
+stage/grade/chapter/section location paths, fullscreen browsing and license notices.
+No endorsement by upstream authors is implied.
+
+S01: Marble / Generative Spark, Inc.
+  Source: https://github.com/withmarbleapp/os-taxonomy
+  License: ODbL-1.0 + CC-BY-SA-4.0
+S02: K12-KGraph Authors
+  Source: https://github.com/haolpku/K12-KGraph
+  License: CC-BY-NC-SA-4.0
+S03: cn-math-taxonomy Authors
+  Source: https://github.com/xiaoyang111222/cn-math-taxonomy
+  License: CC-BY-NC-4.0
+S04: China Skill Taxonomy Authors
+  Source: https://github.com/goralcao/china-skill-taxonomy
+  License: ODbL-1.0 + CC-BY-SA-4.0
+S06: mmlong818/k12-knowledge-points Authors
+  Source: https://github.com/mmlong818/k12-knowledge-points
+  License: PolyForm-Noncommercial-1.0.0

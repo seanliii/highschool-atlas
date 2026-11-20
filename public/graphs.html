@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>知题 · 图谱浏览</title>
+  <meta name="description" content="免密码浏览五份许可明确的知识图谱。搜索实际节点，查看学段、年级、章节归属与原始关系。">
+  <link rel="stylesheet" href="graphs.css">
+  <script src="graphs.js" defer></script>
+</head>
+<body data-atlas-prefix="/highschool-atlas/" data-atlas-deployed="true">
+  <a class="skip-link" href="#atlas-main">跳到图谱内容</a>
+  <header class="site-header">
+    <a class="brand" href="graphs.html" aria-label="知题公开图谱总览">知题<span class="brand-divider" aria-hidden="true"></span><span class="brand-section">图谱</span></a>
+    <nav aria-label="图谱导航">
+      <a id="overview-link" href="graphs.html">全部图谱</a>
+      <a href="https://github.com/seanliii/highschool-atlas" target="_blank" rel="noopener noreferrer">GitHub 开源 ↗</a>
+    </nav>
+    <div class="header-tools"><span class="local-label"><i aria-hidden="true"></i>公开开源 · 免密码</span><button id="theme-toggle" class="icon-button" type="button" aria-label="切换显示主题" title="切换显示主题"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9A7 7 0 0 1 12 3Z"></path></svg></button></div>
+  </header>
+  <main id="atlas-main" tabindex="-1">
+    <section class="initial-state" role="status"><span class="loading-dot" aria-hidden="true"></span><h1>正在读取实际图谱</h1><p>只读公开图谱快照，不调用模型。</p></section>
+  </main>
+  <footer class="site-footer"><span>来源、研究关系与学习掌握，分别看待。</span><span>全部节点可检索 · 归属与语义关系分层 · 五源非商业公开快照</span></footer>
+  <noscript><p class="error-state">请允许此页面运行 JavaScript，才能读取公开图谱与搜索关系。</p></noscript>
+</body>
+</html>
