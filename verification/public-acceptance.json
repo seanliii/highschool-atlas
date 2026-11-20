@@ -1,0 +1,107 @@
+{
+  "ok": true,
+  "health": {
+    "service": "highschool-atlas",
+    "releaseId": "atlas-20261120-8d09e8ea3113",
+    "graphs": 14,
+    "primaryGraphs": 12,
+    "restrictedData": false,
+    "readOnly": true
+  },
+  "graphs": [
+    {
+      "id": "S01",
+      "nodes": 1845,
+      "sampleOriginalRelations": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "id": "S02",
+      "nodes": 10685,
+      "sampleOriginalRelations": [
+        "appears_in"
+      ]
+    },
+    {
+      "id": "S03",
+      "nodes": 2331,
+      "sampleOriginalRelations": [
+        "hard"
+      ]
+    },
+    {
+      "id": "S04",
+      "nodes": 1273,
+      "sampleOriginalRelations": [
+        "hard",
+        "soft"
+      ]
+    },
+    {
+      "id": "S06",
+      "nodes": 33765,
+      "sampleOriginalRelations": [
+        "prerequisite"
+      ]
+    },
+    {
+      "id": "curriculum",
+      "nodes": 511,
+      "sampleOriginalRelations": [
+        "prerequisite"
+      ]
+    },
+    {
+      "id": "foundation",
+      "nodes": 189,
+      "sampleOriginalRelations": [
+        "prerequisite"
+      ]
+    },
+    {
+      "id": "papers",
+      "nodes": 557,
+      "sampleOriginalRelations": [
+        "bridge",
+        "bridge_anchor",
+        "cross_paper",
+        "cross_question",
+        "mapping"
+      ]
+    },
+    {
+      "id": "thinking",
+      "nodes": 1112,
+      "sampleOriginalRelations": [
+        "has_step",
+        "mechanism",
+        "sequence"
+      ]
+    },
+    {
+      "id": "textbooks",
+      "nodes": 5942,
+      "sampleOriginalRelations": [
+        "chapter_page",
+        "physical_page",
+        "registered_chapter"
+      ]
+    },
+    {
+      "id": "mapping",
+      "nodes": 4167,
+      "sampleOriginalRelations": [
+        "candidate"
+      ]
+    },
+    {
+      "id": "ledger",
+      "nodes": 390,
+      "sampleOriginalRelations": [
+        "binding"
+      ]
+    }
+  ]
+}
